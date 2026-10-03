@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>마크 하는 방법</title>
+<style>
+:root{--bg:#f4fbf2;--card:#ffffff;--ink:#2b2b2b;--sub:#5f6b5c;--grass:#6cc04a;--dirt:#9b6b43;--sky:#cfeeff;--pink:#ffd9e6;--yel:#fff3c4;--key:#f1f1f1;--keyb:#c9c9c9;--line:#e3eadf;--accent:#3a8f2a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17201a;--card:#222c25;--ink:#eef3ec;--sub:#a9b8a5;--sky:#1e3546;--pink:#40252f;--yel:#3d3720;--key:#333d36;--keyb:#55615a;--line:#33403a;--accent:#8fdc72}}
+:root[data-theme="dark"]{--bg:#17201a;--card:#222c25;--ink:#eef3ec;--sub:#a9b8a5;--sky:#1e3546;--pink:#40252f;--yel:#3d3720;--key:#333d36;--keyb:#55615a;--line:#33403a;--accent:#8fdc72}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","맑은 고딕",sans-serif;font-size:17px;line-height:1.6}
+header{background:linear-gradient(180deg,var(--grass) 0 60%,var(--dirt) 60% 100%);color:#fff;text-align:center;padding:22px 16px 26px}
+header h1{margin:0;font-size:28px;text-shadow:2px 2px 0 #2d5a1e}
+nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:2px solid var(--line);display:flex;gap:6px;overflow-x:auto;padding:8px 12px}
+nav button{flex:0 0 auto;border:0;border-radius:20px;padding:10px 14px;min-height:44px;font:inherit;font-size:15px;background:var(--sky);color:var(--ink);cursor:pointer}
+nav button.on{background:var(--accent);color:#fff;font-weight:bold}
+main{max-width:860px;margin:0 auto;padding:16px}
+section{display:none}
+section.on{display:block}
+.card{background:var(--card);border-radius:18px;padding:18px;margin:0 0 16px;box-shadow:0 3px 0 var(--line)}
+h2{margin:0 0 10px;font-size:23px}
+h3{margin:14px 0 6px;font-size:19px}
+.say{float:right;border:0;border-radius:50%;width:44px;height:44px;font-size:20px;background:var(--yel);cursor:pointer}
+.big{font-size:20px;font-weight:bold}
+.box{border-radius:14px;padding:12px 14px;margin:10px 0}
+.pink{background:var(--pink)}.yel{background:var(--yel)}.sky{background:var(--sky)}
+kbd{display:inline-block;min-width:34px;text-align:center;padding:3px 9px;margin:0 2px;border:2px solid var(--keyb);border-bottom-width:4px;border-radius:8px;background:var(--key);font-family:inherit;font-weight:bold;font-size:16px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding:10px 10px 10px 52px;margin:8px 0;background:var(--bg);border-radius:12px}
+.steps li::before{content:counter(s);position:absolute;left:10px;top:9px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;text-align:center;line-height:32px;font-weight:bold}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.k{background:var(--bg);border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px}
+.k .keys{flex:0 0 auto;min-width:90px}
+svg{max-width:100%;height:auto;display:block;margin:8px auto}
+.quiz button{display:block;width:100%;text-align:left;margin:6px 0;padding:12px;min-height:44px;border-radius:12px;border:2px solid var(--line);background:var(--card);color:var(--ink);font:inherit;cursor:pointer}
+.quiz button.ok{background:#c8f0b8;border-color:#6cc04a;color:#1d3d12}
+.quiz button.no{background:#ffd0d0;border-color:#e88;color:#4a1515}
+.fb{min-height:26px;font-weight:bold}
+.pager{display:flex;justify-content:space-between;gap:10px;margin-top:6px}
+.pager button{flex:1;min-height:48px;border:0;border-radius:14px;font:inherit;font-weight:bold;background:var(--grass);color:#fff;cursor:pointer}
+.pager button:disabled{opacity:.35}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:9}
+</style>
+</head>
+<body>
+<header><h1>⛏️ 마크 하는 방법</h1><p style="margin:8px 0 0"><a href="keys.html" style="color:#fff;font-weight:bold;background:#2d5a1e;padding:8px 14px;border-radius:20px;text-decoration:none;display:inline-block">⌨️ 단축키 보러 가기 →</a></p></header>
+<nav id="nav"></nav>
+<main>
+
+<section data-t="✋ 왼손 쓰기">
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h2>✋ 왼손에 물건 들기</h2>
+<p class="big">태블릿 마크에는 <kbd>F</kbd> 키가 없어요!</p>
+<p>컴퓨터 마크(자바 에디션)는 <kbd>F</kbd>를 누르면 오른손·왼손 물건이 바뀌어요. 그런데 태블릿 마크는 <b>베드락 에디션</b>이라서 그런 단축키가 처음부터 없어요. 키보드가 고장 난 게 아니에요.</p>
+<div class="box yel">대신 <b>가방(인벤토리)을 열고, 왼손 칸에 직접 옮겨 넣으면</b> 돼요.</div>
+</div>
+
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h3>이렇게 해요</h3>
+<ol class="steps">
+<li><kbd>E</kbd> 를 눌러 가방을 열어요.</li>
+<li>내 캐릭터 그림 옆에 <b>방패 모양이 흐릿하게 그려진 빈 칸</b>을 찾아요. 그게 왼손 칸이에요.</li>
+<li>방패 같은 물건을 <b>마우스 왼쪽 버튼으로 집고</b>, 그 왼손 칸에 놓아요.</li>
+<li><kbd>E</kbd> 를 다시 눌러 가방을 닫으면 왼손에 들려 있어요!</li>
+<li>방패는 <b>마우스 오른쪽 버튼을 꾹</b> 누르면 막기를 해요.</li>
+</ol>
+<svg viewBox="0 0 420 220" role="img" aria-label="가방 화면에서 왼손 칸 위치">
+<rect x="10" y="10" width="400" height="200" rx="14" fill="#c6c6c6" stroke="#555" stroke-width="3"/>
+<rect x="30" y="30" width="44" height="44" fill="#8b8b8b" stroke="#373737" stroke-width="2"/><rect x="30" y="78" width="44" height="44" fill="#8b8b8b" stroke="#373737" stroke-width="2"/><rect x="30" y="126" width="44" height="44" fill="#8b8b8b" stroke="#373737" stroke-width="2"/><rect x="30" y="174" width="44" height="30" fill="#8b8b8b" stroke="#373737" stroke-width="2"/>
+<text x="52" y="58" text-anchor="middle" font-size="12" fill="#333">투구</text><text x="52" y="105" text-anchor="middle" font-size="12" fill="#333">갑옷</text>
+<rect x="88" y="30" width="110" height="170" fill="#000" opacity=".75"/>
+<circle cx="143" cy="62" r="18" fill="#c99a6b"/><rect x="125" y="82" width="36" height="58" fill="#3fa7d6"/><rect x="125" y="140" width="16" height="50" fill="#3b3b9b"/><rect x="145" y="140" width="16" height="50" fill="#3b3b9b"/>
+<rect x="212" y="156" width="44" height="44" fill="#ffe14d" stroke="#e0302d" stroke-width="4"/>
+<path d="M226 166h16v12c0 8-8 12-8 12s-8-4-8-12z" fill="none" stroke="#777" stroke-width="2"/>
+<text x="300" y="172" font-size="16" fill="#c0201c" font-weight="bold">← 여기가</text><text x="300" y="192" font-size="16" fill="#c0201c" font-weight="bold">왼손 칸!</text>
+</svg>
+<p style="text-align:center;color:var(--sub);font-size:14px">게임 버전마다 칸 위치가 조금 다를 수 있어요. 방패 그림이 있는 칸을 찾으면 돼요.</p>
+</div>
+
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h3>왼손에 들 수 있는 것 (몇 가지만 돼요)</h3>
+<div class="grid">
+<div class="k">🛡️ <span><b>방패</b> – 공격 막기</span></div>
+<div class="k">🗿 <span><b>불사의 토템</b> – 한 번 살려줘요</span></div>
+<div class="k">🏹 <span><b>화살</b> – 활 쏠 때 편해요</span></div>
+<div class="k">🎆 <span><b>폭죽 로켓</b> – 겉날개 날 때</span></div>
+<div class="k">🗺️ <span><b>지도</b> – 들고 다니며 보기</span></div>
+<div class="k">🐚 <span><b>앵무조개 껍데기</b></span></div>
+</div>
+<div class="box pink">❌ 칼, 곡괭이, 블록, 횃불 같은 건 태블릿 마크에선 왼손 칸에 안 들어가요. 안 들어가는 게 정상이에요!</div>
+</div>
+</div>
+</section>
+
+<section data-t="🔌 처음 준비">
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h2>🔌 키보드·마우스 처음 연결하기</h2>
+<ol class="steps">
+<li>태블릿 <b>설정 → 블루투스</b>를 켜고, 키보드와 마우스를 연결해요. (선으로 꽂는 것도 돼요)</li>
+<li>마인크래프트를 켜요. 마우스를 움직이면 화면의 터치 버튼이 사라지고 키보드 모드가 돼요.</li>
+<li>게임 안 <b>설정 → 키보드 및 마우스</b>에 들어가면 키를 내 마음대로 바꿀 수 있어요.</li>
+<li>같은 곳에서 <b>마우스 감도</b>를 조절해요. 화면이 너무 휙휙 돌면 감도를 낮춰요.</li>
+</ol>
+<div class="box sky">💡 키가 이상하게 꼬였으면 <b>설정 → 키보드 및 마우스</b> 맨 아래 <b>기본값으로 초기화</b>를 누르면 원래대로 돌아와요.</div>
+<div class="box yel">💡 태블릿 키보드에 <kbd>F1</kbd>~<kbd>F12</kbd> 줄이 없으면 <kbd>Fn</kbd> 키를 같이 눌러야 할 수 있어요.</div>
+</div>
+</section>
+
+<section data-t="🌳 첫날 하기">
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h2>🌳 서바이벌 첫날, 이 순서로!</h2>
+<ol class="steps">
+<li>🌲 <b>나무 캐기</b> – 나무에 대고 왼쪽 버튼 꾹. 원목 5개 이상!</li>
+<li>🪵 <b>판자 만들기</b> – <kbd>E</kbd> 열고 원목을 판자로 바꿔요.</li>
+<li>🧰 <b>작업대 만들기</b> – 판자 4개. 땅에 놓고 오른쪽 클릭으로 열어요.</li>
+<li>🥢 <b>막대기 → 나무 곡괭이</b> – 작업대에서 만들어요.</li>
+<li>🪨 <b>돌 캐기 → 돌 곡괭이·돌 칼</b> – 나무보다 훨씬 튼튼해요.</li>
+<li>🐑 <b>양털 3개 + 판자 3개 = 침대</b> – 밤에 자면 괴물 시간을 건너뛰어요.</li>
+<li>🔥 <b>석탄 찾기 → 횃불</b> – 집 안팎을 밝히면 괴물이 덜 생겨요.</li>
+<li>🏠 <b>해 지기 전에 집</b> – 작아도 괜찮아요. 문을 꼭 달아요.</li>
+<li>🍖 <b>먹을 것 챙기기</b> – 고기는 화로에 구우면 배가 더 불러요.</li>
+</ol>
+<div class="box sky">💡 레시피가 기억 안 나면 <b>작업대 화면 왼쪽 책 그림(레시피 책)</b>을 눌러요. 만들 수 있는 게 다 나와요!</div>
+</div>
+</section>
+
+<section data-t="🛡️ 안전 꿀팁">
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h2>🛡️ 안전 꿀팁</h2>
+<div class="grid">
+<div class="k">💚 <span><b>크리퍼</b>가 쉬익~ 하면 바로 뒤로 도망!</span></div>
+<div class="k">🌋 <span><b>용암</b> 근처에선 <kbd>Shift</kbd> 웅크리고 걷기</span></div>
+<div class="k">⬇️ <span><b>바로 아래로 파지 않기</b> – 구멍에 빠질 수 있어요</span></div>
+<div class="k">🛏️ <span><b>침대에 한 번 자두면</b> 죽어도 거기서 다시 시작</span></div>
+<div class="k">🛡️ <span><b>방패는 왼손에!</b> 칼 쓰면서 막을 수 있어요</span></div>
+<div class="k">💾 <span>그만할 땐 <kbd>Esc</kbd> → <b>저장 후 종료</b></span></div>
+</div>
+</div>
+</section>
+
+<section data-t="🎮 퀴즈">
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h2>🎮 확인 퀴즈</h2>
+<div id="quiz" class="quiz"></div>
+</div>
+</section>
+
+<div class="pager"><button id="prev">◀ 이전</button><button id="next">다음 ▶</button></div>
+</main>
+<canvas id="confetti"></canvas>
+<script>
+const secs=[...document.querySelectorAll('section')],nav=document.getElementById('nav');let cur=0;
+secs.forEach((s,i)=>{const b=document.createElement('button');b.textContent=s.dataset.t;b.onclick=()=>go(i);nav.appendChild(b)});
+function go(i){stop();cur=i;secs.forEach((s,j)=>s.classList.toggle('on',j===i));[...nav.children].forEach((b,j)=>b.classList.toggle('on',j===i));nav.children[i].scrollIntoView({inline:'center',block:'nearest'});document.getElementById('prev').disabled=i===0;document.getElementById('next').disabled=i===secs.length-1;window.scrollTo(0,0)}
+document.getElementById('prev').onclick=()=>go(cur-1);document.getElementById('next').onclick=()=>go(cur+1);
+
+// 읽어주기 (pitch 1.6 / rate 1.02)
+let gen=0,ka=null;
+function stop(){gen++;try{speechSynthesis.cancel()}catch(e){}clearInterval(ka)}
+function voice(){const v=speechSynthesis.getVoices();return v.find(x=>x.lang==='ko-KR'&&/Google/.test(x.name))||v.find(x=>x.lang&&x.lang.startsWith('ko'))}
+function speak(text){stop();const my=gen;const parts=text.replace(/\s+/g,' ').split(/(?<=[.!?…])\s+|(?<=요)\s+/).filter(x=>x.trim());let i=0;
+ ka=setInterval(()=>{if(speechSynthesis.speaking){speechSynthesis.pause();speechSynthesis.resume()}},10000);
+ (function next(){if(my!==gen||i>=parts.length){clearInterval(ka);return}const u=new SpeechSynthesisUtterance(parts[i++]);u.lang='ko-KR';u.pitch=1.6;u.rate=1.02;const v=voice();if(v)u.voice=v;u.onend=next;u.onerror=next;speechSynthesis.speak(u)})()}
+document.querySelectorAll('.say').forEach(b=>b.onclick=()=>{const c=b.parentElement.cloneNode(true);c.querySelectorAll('.say,svg').forEach(x=>x.remove());speak(c.innerText.replace(/Shift/g,'시프트').replace(/Ctrl/g,'컨트롤').replace(/Space/g,'스페이스바').replace(/Esc/g,'이에스씨'))});
+try{speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{}}catch(e){}
+
+// 퀴즈
+const Q=[
+ ['태블릿 마크에서 F 키를 누르면?',['손이 바뀐다','아무 일도 없다 (그 키가 없어요)','점프한다'],1],
+ ['왼손에 방패를 들려면?',['E로 가방 열고 방패 그림 칸에 넣기','Q를 누르기','T를 누르기'],0],
+ ['왼손 칸에 들어가는 것은?',['다이아몬드 칼','흙 블록','불사의 토템'],2],
+ ['가방(인벤토리)을 여는 키는?',['E','W','Space'],0],
+ ['블록을 놓을 때 누르는 건?',['마우스 왼쪽','마우스 오른쪽','Esc'],1],
+ ['낭떠러지에서 안 떨어지게 걸으려면?',['Ctrl','Shift','Q'],1],
+ ['밤에 괴물 시간을 건너뛰려면?',['침대에서 자기','계속 점프','F1 누르기'],0]];
+const qz=document.getElementById('quiz');let score=0,done=0;
+Q.forEach(([q,opts,ans],n)=>{const d=document.createElement('div');d.innerHTML='<h3>'+(n+1)+'. '+q+'</h3>';const fb=document.createElement('div');fb.className='fb';
+ opts.forEach((o,k)=>{const b=document.createElement('button');b.textContent=o;b.onclick=()=>{if(d.dataset.done)return;d.dataset.done=1;done++;
+  if(k===ans){b.classList.add('ok');score++;fb.textContent='⭕ 정답!'}else{b.classList.add('no');d.querySelectorAll('button')[ans].classList.add('ok');fb.textContent='❌ 정답은 초록색이에요'}
+  if(done===Q.length){const r=document.createElement('p');r.className='big';r.style.textAlign='center';r.textContent='🎉 '+Q.length+'문제 중 '+score+'개 맞았어요!';qz.appendChild(r);if(score>=5)party();speak(r.textContent)}};d.appendChild(b)});
+ d.appendChild(fb);qz.appendChild(d)});
+
+// 색종이
+function party(){const c=document.getElementById('confetti'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;const col=['#6cc04a','#ffd34d','#ff8fb1','#7cc8ff','#b58cff'];
+ const p=Array.from({length:140},()=>({x:Math.random()*c.width,y:-20-Math.random()*c.height*.5,v:2+Math.random()*3,w:6+Math.random()*6,c:col[Math.random()*5|0],r:Math.random()*6}));let t=0;
+ (function f(){x.clearRect(0,0,c.width,c.height);p.forEach(o=>{o.y+=o.v;o.r+=.1;x.save();x.translate(o.x,o.y);x.rotate(o.r);x.fillStyle=o.c;x.fillRect(-o.w/2,-o.w/2,o.w,o.w);x.restore()});if(++t<240)requestAnimationFrame(f);else x.clearRect(0,0,c.width,c.height)})()}
+go(0);
+</script>
+</body>
+</html>

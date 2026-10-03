@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>마크 단축키</title>
+<style>
+:root{--bg:#f4fbf2;--card:#ffffff;--ink:#2b2b2b;--sub:#5f6b5c;--grass:#6cc04a;--dirt:#9b6b43;--sky:#cfeeff;--pink:#ffd9e6;--yel:#fff3c4;--key:#f1f1f1;--keyb:#c9c9c9;--line:#e3eadf;--accent:#3a8f2a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17201a;--card:#222c25;--ink:#eef3ec;--sub:#a9b8a5;--sky:#1e3546;--pink:#40252f;--yel:#3d3720;--key:#333d36;--keyb:#55615a;--line:#33403a;--accent:#8fdc72}}
+:root[data-theme="dark"]{--bg:#17201a;--card:#222c25;--ink:#eef3ec;--sub:#a9b8a5;--sky:#1e3546;--pink:#40252f;--yel:#3d3720;--key:#333d36;--keyb:#55615a;--line:#33403a;--accent:#8fdc72}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","맑은 고딕",sans-serif;font-size:17px;line-height:1.6}
+header{background:linear-gradient(180deg,var(--grass) 0 60%,var(--dirt) 60% 100%);color:#fff;text-align:center;padding:22px 16px 26px}
+header h1{margin:0;font-size:28px;text-shadow:2px 2px 0 #2d5a1e}
+nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:2px solid var(--line);display:flex;gap:6px;overflow-x:auto;padding:8px 12px}
+nav button{flex:0 0 auto;border:0;border-radius:20px;padding:10px 14px;min-height:44px;font:inherit;font-size:15px;background:var(--sky);color:var(--ink);cursor:pointer}
+nav button.on{background:var(--accent);color:#fff;font-weight:bold}
+main{max-width:860px;margin:0 auto;padding:16px}
+
+.card{background:var(--card);border-radius:18px;padding:18px;margin:0 0 16px;box-shadow:0 3px 0 var(--line)}
+h2{margin:0 0 10px;font-size:23px}
+h3{margin:14px 0 6px;font-size:19px}
+.say{float:right;border:0;border-radius:50%;width:44px;height:44px;font-size:20px;background:var(--yel);cursor:pointer}
+.big{font-size:20px;font-weight:bold}
+.box{border-radius:14px;padding:12px 14px;margin:10px 0}
+.pink{background:var(--pink)}.yel{background:var(--yel)}.sky{background:var(--sky)}
+kbd{display:inline-block;min-width:34px;text-align:center;padding:3px 9px;margin:0 2px;border:2px solid var(--keyb);border-bottom-width:4px;border-radius:8px;background:var(--key);font-family:inherit;font-weight:bold;font-size:16px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding:10px 10px 10px 52px;margin:8px 0;background:var(--bg);border-radius:12px}
+.steps li::before{content:counter(s);position:absolute;left:10px;top:9px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;text-align:center;line-height:32px;font-weight:bold}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.k{background:var(--bg);border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px}
+.k .keys{flex:0 0 auto;min-width:90px}
+svg{max-width:100%;height:auto;display:block;margin:8px auto}
+.quiz button{display:block;width:100%;text-align:left;margin:6px 0;padding:12px;min-height:44px;border-radius:12px;border:2px solid var(--line);background:var(--card);color:var(--ink);font:inherit;cursor:pointer}
+.quiz button.ok{background:#c8f0b8;border-color:#6cc04a;color:#1d3d12}
+.quiz button.no{background:#ffd0d0;border-color:#e88;color:#4a1515}
+.fb{min-height:26px;font-weight:bold}
+.pager{display:flex;justify-content:space-between;gap:10px;margin-top:6px}
+.pager button{flex:1;min-height:48px;border:0;border-radius:14px;font:inherit;font-weight:bold;background:var(--grass);color:#fff;cursor:pointer}
+.pager button:disabled{opacity:.35}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:9}
+</style>
+</head>
+<body>
+<header><h1>⌨️ 마크 단축키</h1><p style="margin:8px 0 0"><a href="index.html" style="color:#fff;font-weight:bold;background:#2d5a1e;padding:8px 14px;border-radius:20px;text-decoration:none;display:inline-block">← 하는 방법 보러 가기</a></p></header>
+<main>
+
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h2>⌨️ 키보드 단축키</h2>
+<h3>🚶 움직이기</h3>
+<div class="grid">
+<div class="k"><span class="keys"><kbd>W</kbd></span>앞으로</div>
+<div class="k"><span class="keys"><kbd>S</kbd></span>뒤로</div>
+<div class="k"><span class="keys"><kbd>A</kbd></span>왼쪽으로</div>
+<div class="k"><span class="keys"><kbd>D</kbd></span>오른쪽으로</div>
+<div class="k"><span class="keys"><kbd>Space</kbd></span>점프 (물에선 위로 헤엄)</div>
+<div class="k"><span class="keys"><kbd>Shift</kbd></span>웅크리기 (낭떠러지에서 안 떨어져요)</div>
+<div class="k"><span class="keys"><kbd>Ctrl</kbd></span>달리기 (W와 같이)</div>
+<div class="k"><span class="keys"><kbd>W</kbd><kbd>W</kbd></span>W 두 번 빨리 = 달리기</div>
+</div>
+<h3>🎒 물건</h3>
+<div class="grid">
+<div class="k"><span class="keys"><kbd>E</kbd></span>가방(인벤토리) 열기·닫기</div>
+<div class="k"><span class="keys"><kbd>1</kbd>~<kbd>9</kbd></span>아래 칸 물건 고르기</div>
+<div class="k"><span class="keys"><kbd>Q</kbd></span>들고 있는 것 1개 버리기</div>
+</div>
+<h3>🛠️ 그 밖에</h3>
+<div class="grid">
+<div class="k"><span class="keys"><kbd>T</kbd></span>채팅 열기</div>
+<div class="k"><span class="keys"><kbd>/</kbd></span>명령어 쓰기</div>
+<div class="k"><span class="keys"><kbd>F5</kbd></span>시점 바꾸기 (1인칭↔3인칭)</div>
+<div class="k"><span class="keys"><kbd>F1</kbd></span>화면 글씨 숨기기 (사진 찍기 좋아요)</div>
+<div class="k"><span class="keys"><kbd>Esc</kbd></span>일시정지·메뉴</div>
+</div>
+<div class="box pink">❗ <kbd>F</kbd> (손 바꾸기)는 태블릿 마크엔 없어요. → <a href="index.html"><b>하는 방법 페이지</b></a>의 ✋ 왼손 쓰기를 보세요.</div>
+</div>
+
+
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h2>🖱️ 마우스 쓰는 법</h2>
+<div class="grid">
+<div class="k"><span class="keys">🖱️ 움직이기</span>둘러보기</div>
+<div class="k"><span class="keys">⬅️ 왼쪽 클릭</span>때리기 · 꾹 누르면 블록 캐기</div>
+<div class="k"><span class="keys">➡️ 오른쪽 클릭</span>블록 놓기 · 먹기 · 문 열기 · 활 당기기 · 방패 막기</div>
+<div class="k"><span class="keys">⚙️ 휠 굴리기</span>아래 칸 물건 바꾸기</div>
+<div class="k"><span class="keys">⚙️ 휠 누르기</span>보고 있는 블록 고르기 (크리에이티브)</div>
+</div>
+<h3>🎒 가방 안에서</h3>
+<div class="grid">
+<div class="k"><span class="keys">⬅️ 클릭</span>물건 전부 집기 / 놓기</div>
+<div class="k"><span class="keys">➡️ 클릭</span>반만 집기 · 1개씩 놓기</div>
+<div class="k"><span class="keys"><kbd>Shift</kbd>+클릭</span>물건 한 번에 옮기기</div>
+</div>
+<div class="box yel">💡 음식은 오른쪽 버튼을 <b>꾹</b> 누르고 있어야 먹어요. 톡 누르면 안 먹어져요.</div>
+</div>
+
+</main>
+<script>
+let gen=0,ka=null;
+function stop(){gen++;try{speechSynthesis.cancel()}catch(e){}clearInterval(ka)}
+function voice(){const v=speechSynthesis.getVoices();return v.find(x=>x.lang==='ko-KR'&&/Google/.test(x.name))||v.find(x=>x.lang&&x.lang.startsWith('ko'))}
+function speak(text){stop();const my=gen;const parts=text.replace(/\s+/g,' ').split(/(?<=[.!?…])\s+|(?<=요)\s+/).filter(x=>x.trim());let i=0;
+ ka=setInterval(()=>{if(speechSynthesis.speaking){speechSynthesis.pause();speechSynthesis.resume()}},10000);
+ (function next(){if(my!==gen||i>=parts.length){clearInterval(ka);return}const u=new SpeechSynthesisUtterance(parts[i++]);u.lang='ko-KR';u.pitch=1.6;u.rate=1.02;const v=voice();if(v)u.voice=v;u.onend=next;u.onerror=next;speechSynthesis.speak(u)})()}
+document.querySelectorAll('.say').forEach(b=>b.onclick=()=>{const c=b.parentElement.cloneNode(true);c.querySelectorAll('.say,svg').forEach(x=>x.remove());speak(c.innerText.replace(/Shift/g,'시프트').replace(/Ctrl/g,'컨트롤').replace(/Space/g,'스페이스바').replace(/Esc/g,'이에스씨'))});
+</script>
+</body>
+</html>
