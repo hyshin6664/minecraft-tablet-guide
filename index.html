@@ -88,7 +88,7 @@ svg{max-width:100%;height:auto;display:block;margin:8px auto}
 <div class="k">🗺️ <span><b>지도</b> – 들고 다니며 보기</span></div>
 <div class="k">🐚 <span><b>앵무조개 껍데기</b></span></div>
 </div>
-<div class="box pink">❌ 칼, 곡괭이, 블록, 횃불 같은 건 태블릿 마크에선 왼손 칸에 안 들어가요. 안 들어가는 게 정상이에요!</div>
+<div class="box pink">❌ 칼, 곡괭이, 블록, 횃불 같은 건 태블릿 마크에선 왼손 칸에 안 들어가요. 안 들어가는 게 정상이에요!<br>🔦 횃불로 밝히고 싶다면 → <b>🔦 어두울 때</b> 탭을 보세요.</div>
 </div>
 </div>
 </section>
@@ -122,6 +122,45 @@ svg{max-width:100%;height:auto;display:block;margin:8px auto}
 <li>🍖 <b>먹을 것 챙기기</b> – 고기는 화로에 구우면 배가 더 불러요.</li>
 </ol>
 <div class="box sky">💡 레시피가 기억 안 나면 <b>작업대 화면 왼쪽 책 그림(레시피 책)</b>을 눌러요. 만들 수 있는 게 다 나와요!</div>
+</div>
+</section>
+
+<section data-t="🔦 어두울 때">
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h2>🔦 곡괭이 들고 횃불도 들고 싶어요!</h2>
+<p class="big">왼손에 횃불은 안 돼요. 그리고 비밀이 하나 있어요.</p>
+<div class="box pink">마크에서는 <b>횃불을 손에 들고만 있으면 주변이 밝아지지 않아요.</b> 컴퓨터 마크도 똑같아요. 횃불은 <b>벽이나 바닥에 꽂아야</b> 빛이 나요.</div>
+</div>
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h3>⭐ 방법 1: 1번 곡괭이, 2번 횃불 (제일 쉬워요)</h3>
+<ol class="steps">
+<li>아래 칸 <kbd>1</kbd>번에 곡괭이, <kbd>2</kbd>번에 횃불을 넣어요.</li>
+<li>굴을 파다가 어두워지면 <kbd>2</kbd> 누르고 벽에 <b>오른쪽 클릭</b>으로 횃불 꽂기.</li>
+<li>다시 <kbd>1</kbd> 누르고 계속 파요. (마우스 휠을 한 칸 굴려도 돼요)</li>
+</ol>
+<div class="box yel">💡 굴에서는 <b>오른쪽 벽에만</b> 횃불을 꽂으면, 나올 때 횃불이 왼쪽에 보이니까 길을 안 잃어요!</div>
+</div>
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h3>🛠️ 방법 2: 횃불 잔뜩 만들기</h3>
+<div class="grid">
+<div class="k">🔥 <span><b>석탄 1 + 막대기 1</b> = 횃불 4개</span></div>
+<div class="k">🪵 <span>석탄이 없으면 <b>원목을 화로에 구워 숯</b>을 만들어요. 숯도 똑같이 돼요!</span></div>
+<div class="k">🏮 <span><b>랜턴</b> = 횃불 + 철 조각 8개. 더 예뻐요</span></div>
+</div>
+</div>
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h3>🧪 방법 3: 야간 투시 물약 (어두워도 다 보여요)</h3>
+<p>마시면 몇 분 동안 깜깜한 동굴도 낮처럼 보여요. 대신 재료 구하기가 어려워서 <b>마크를 좀 더 한 다음</b>에 도전해요.</p>
+<ol class="steps">
+<li><b>양조기</b>를 만들어요 (블레이즈 막대 + 조약돌 3개).</li>
+<li>물병 + <b>네더 사마귀</b> → 어색한 물약</li>
+<li>어색한 물약 + <b>황금 당근</b> → 야간 투시 물약!</li>
+</ol>
+<div class="box sky">네더 사마귀와 블레이즈 막대는 <b>네더(지옥) 세계</b>에 가야 구할 수 있어요.</div>
+</div>
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h3>☀️ 방법 4: 화면 밝기 올리기</h3>
+<p><kbd>Esc</kbd> → <b>설정 → 비디오 → 밝기</b>를 오른쪽 끝까지 올려요. 동굴이 조금 덜 깜깜해 보여요.</p>
 </div>
 </section>
 
@@ -173,6 +212,7 @@ const Q=[
  ['가방(인벤토리)을 여는 키는?',['E','W','Space'],0],
  ['블록을 놓을 때 누르는 건?',['마우스 왼쪽','마우스 오른쪽','Esc'],1],
  ['낭떠러지에서 안 떨어지게 걸으려면?',['Ctrl','Shift','Q'],1],
+ ['횃불로 동굴을 밝히려면?',['손에 들고만 있기','벽이나 바닥에 꽂기','Q로 던지기'],1],
  ['밤에 괴물 시간을 건너뛰려면?',['침대에서 자기','계속 점프','F1 누르기'],0]];
 const qz=document.getElementById('quiz');let score=0,done=0;
 Q.forEach(([q,opts,ans],n)=>{const d=document.createElement('div');d.innerHTML='<h3>'+(n+1)+'. '+q+'</h3>';const fb=document.createElement('div');fb.className='fb';
