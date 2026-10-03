@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>마크 제작법</title>
+<style>
+:root{--bg:#f4fbf2;--card:#ffffff;--ink:#2b2b2b;--sub:#5f6b5c;--grass:#6cc04a;--dirt:#9b6b43;--sky:#cfeeff;--yel:#fff3c4;--pink:#ffd9e6;--line:#e3eadf;--accent:#3a8f2a;--slot:#8b8b8b;--slotb:#373737;--table:#c6c6c6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17201a;--card:#222c25;--ink:#eef3ec;--sub:#a9b8a5;--sky:#1e3546;--yel:#3d3720;--pink:#40252f;--line:#33403a;--accent:#8fdc72;--table:#4a4f4b}}
+:root[data-theme="dark"]{--bg:#17201a;--card:#222c25;--ink:#eef3ec;--sub:#a9b8a5;--sky:#1e3546;--yel:#3d3720;--pink:#40252f;--line:#33403a;--accent:#8fdc72;--table:#4a4f4b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","맑은 고딕",sans-serif;font-size:17px;line-height:1.55}
+header{background:linear-gradient(180deg,var(--grass) 0 60%,var(--dirt) 60% 100%);color:#fff;text-align:center;padding:22px 16px 26px}
+header h1{margin:0;font-size:28px;text-shadow:2px 2px 0 #2d5a1e}
+.links a{color:#fff;font-weight:bold;background:#2d5a1e;padding:8px 14px;border-radius:20px;text-decoration:none;display:inline-block;margin:8px 3px 0}
+nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:2px solid var(--line);display:flex;gap:6px;overflow-x:auto;padding:8px 12px}
+nav a{flex:0 0 auto;border-radius:20px;padding:10px 14px;min-height:44px;font-size:15px;background:var(--sky);color:var(--ink);text-decoration:none}
+main{max-width:900px;margin:0 auto;padding:16px}
+h2{margin:22px 0 10px;font-size:23px;scroll-margin-top:70px}
+.box{border-radius:14px;padding:12px 14px;margin:10px 0;background:var(--yel)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.r{background:var(--card);border-radius:16px;padding:14px;box-shadow:0 3px 0 var(--line)}
+.r h3{margin:0 0 8px;font-size:19px}
+.row{display:flex;align-items:center;gap:10px}
+.t{display:grid;grid-template-columns:repeat(3,38px);gap:3px;background:var(--table);padding:5px;border-radius:6px}
+.t.s2{grid-template-columns:repeat(2,38px)}
+.c{width:38px;height:38px;background:var(--slot);border:2px solid var(--slotb);display:flex;align-items:center;justify-content:center;font-size:22px;border-radius:3px}
+.arrow{font-size:24px}
+.out{font-size:34px;text-align:center;min-width:56px}
+.out small{display:block;font-size:14px;font-weight:bold}
+.need{margin-top:8px;font-size:15px;color:var(--sub)}
+.need b{color:var(--ink)}
+.mat{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px}
+.mat button{border:2px solid var(--line);border-radius:20px;padding:8px 14px;min-height:44px;font:inherit;font-size:16px;background:var(--card);color:var(--ink);cursor:pointer}
+.mat button.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:bold}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:15px;color:var(--sub)}
+</style>
+</head>
+<body>
+<header><h1>🧰 마크 제작법</h1>
+<div class="links"><a href="index.html">📘 하는 방법</a><a href="keys.html">⌨️ 단축키</a></div></header>
+<nav><a href="#furnace">🔥 화로</a><a href="#basic">🪵 기본</a><a href="#tools">⛏️ 도구</a><a href="#armor">🦺 갑옷</a><a href="#fight">🏹 싸움</a><a href="#home">🏠 집·생활</a><a href="#light">🔥 빛</a></nav>
+<main>
+<div class="box">🧰 <b>작업대</b>를 오른쪽 클릭하면 3×3 칸이 나와요. 아래 그림처럼 <b>똑같은 자리에</b> 재료를 놓으면 오른쪽에 물건이 생겨요.<br>📖 왼쪽 <b>레시피 책</b>을 누르고 원하는 물건을 누르면 자동으로 놓아줘요!</div>
+<div class="legend" id="legend"></div>
+
+<h2 id="furnace">🔥 화로 만들기 (윤오 추천!)</h2>
+<div class="r" style="margin-bottom:12px">
+<h3>1단계 · 조약돌 8개 모으기</h3>
+<div class="need" style="font-size:17px;color:var(--ink)">⛏️ <b>나무 곡괭이부터 만들어요</b> (판자 3 + 막대기 2).<br>🪨 회색 <b>돌</b>을 곡괭이로 캐면 <b>조약돌</b>이 나와요. 맨손으로 캐면 아무것도 안 나와요!<br>💡 땅을 조금만 파 내려가면 돌이 많이 있어요. <b>심층암 조약돌</b>도 화로 재료로 돼요.</div>
+</div>
+<div class="r" style="margin-bottom:12px"><h3>2단계 · 작업대에 이렇게 놓기</h3>
+<div class="row"><div class="t"><div class="c">🪨</div><div class="c">🪨</div><div class="c">🪨</div><div class="c">🪨</div><div class="c"></div><div class="c">🪨</div><div class="c">🪨</div><div class="c">🪨</div><div class="c">🪨</div></div><span class="arrow">➡️</span><div class="out">🔥<small>화로</small></div></div>
+<div class="need">가운데만 비우고 빙 둘러 <b>조약돌 8개</b></div></div>
+<div class="r" style="margin-bottom:12px"><h3>3단계 · 화로 쓰는 법</h3>
+<div class="need" style="font-size:17px;color:var(--ink)">① 화로를 땅에 놓고 <b>오른쪽 클릭</b>으로 열어요.<br>② <b>위 칸</b> = 구울 것 · <b>아래 칸</b> = 땔감 · <b>오른쪽</b> = 완성!<br>🪵 땔감: 석탄·숯·원목·나무 판자 (석탄 1개로 8개 구워요)</div>
+<div class="grid" style="margin-top:10px">
+<div class="k" style="background:var(--bg);border-radius:12px;padding:8px 10px">🍖 날고기 ➡️ 구운 고기 (배가 더 불러요)</div>
+<div class="k" style="background:var(--bg);border-radius:12px;padding:8px 10px">🟤 철광석 원석 ➡️ ⚙️ 철 주괴</div>
+<div class="k" style="background:var(--bg);border-radius:12px;padding:8px 10px">🪵 원목 ➡️ ⚫ 숯 (횃불 재료!)</div>
+<div class="k" style="background:var(--bg);border-radius:12px;padding:8px 10px">🟡 모래 ➡️ 🪟 유리</div>
+<div class="k" style="background:var(--bg);border-radius:12px;padding:8px 10px">🪨 조약돌 ➡️ 매끈한 돌</div>
+</div></div>
+
+<h2 id="basic">🪵 제일 먼저 만들 것</h2><div class="grid" id="g-basic"></div>
+
+<h2 id="tools">⛏️ 도구 (재료를 골라 보세요)</h2>
+<div class="mat" id="mat-tools"></div>
+<div class="grid" id="g-tools"></div>
+<div class="box">튼튼한 순서: 🪵 나무 &lt; 🪨 돌 &lt; ⚙️ 철 &lt; 💎 다이아몬드. (금은 빠르지만 금방 부서져요)<br>💡 <b>철은 돌 곡괭이 이상</b>, <b>다이아몬드는 철 곡괭이 이상</b>으로 캐야 나와요!</div>
+
+<h2 id="armor">🦺 갑옷 (재료를 골라 보세요)</h2>
+<div class="mat" id="mat-armor"></div>
+<div class="grid" id="g-armor"></div>
+
+<h2 id="fight">🏹 싸움</h2><div class="grid" id="g-fight"></div>
+<h2 id="home">🏠 집·생활</h2><div class="grid" id="g-home"></div>
+<h2 id="light">🔥 빛</h2><div class="grid" id="g-light"></div>
+</main>
+<script>
+const I={P:['🟫','나무 판자'],L:['🪵','원목'],S:['🥢','막대기'],C:['🪨','조약돌'],c:['⚫','석탄(또는 숯)'],W:['⬜','양털'],I:['⚙️','철 주괴'],T:['🧵','실'],F:['🔺','부싯돌'],E:['🪶','깃털'],N:['🔘','철 조각'],H:['🔥','횃불'],w:['🌾','밀'],G:['🟨','금 주괴'],D:['💎','다이아몬드']};
+const MATS={tools:[['P','🪵 나무'],['C','🪨 돌'],['I','⚙️ 철'],['G','🟨 금'],['D','💎 다이아']],armor:[['I','⚙️ 철'],['G','🟨 금'],['D','💎 다이아']]};
+const R={
+basic:[['나무 판자','🟫',4,['L'],1],['막대기','🥢',4,['P','P'],1],['작업대','🧰',1,['PP','PP'],2],['화로','🔥',1,['CCC','C.C','CCC']],['상자','📦',1,['PPP','P.P','PPP']]],
+tools:[['곡괭이','⛏️',1,['MMM','.S.','.S.']],['도끼','🪓',1,['MM.','MS.','.S.']],['삽','🥄',1,['.M.','.S.','.S.']],['칼','🗡️',1,['.M.','.M.','.S.']],['괭이','🌱',1,['MM.','.S.','.S.']]],
+armor:[['투구','⛑️',1,['MMM','M.M','...']],['흉갑(옷)','🦺',1,['M.M','MMM','MMM']],['레깅스(바지)','👖',1,['MMM','M.M','M.M']],['부츠(신발)','🥾',1,['...','M.M','M.M']]],
+fight:[['활','🏹',1,['.ST','S.T','.ST']],['화살','➶',4,['.F.','.S.','.E.']],['방패','🛡️',1,['PIP','PPP','.P.']]],
+home:[['침대','🛏️',1,['...','WWW','PPP']],['문','🚪',3,['PP.','PP.','PP.']],['사다리','🪜',3,['S.S','SSS','S.S']],['보트','🛶',1,['...','P.P','PPP']],['양동이','🪣',1,['...','I.I','.I.']],['낚싯대','🎣',1,['..S','.ST','S.T']],['빵','🍞',1,['...','www','...']]],
+light:[['횃불','🔥',4,['.c.','.S.','...']],['철 조각','🔘',9,['I'],1],['랜턴','🏮',1,['NNN','NHN','NNN']]]};
+const cur={tools:'P',armor:'I'};
+function card([name,icon,n,pat,size],m){const sz=size||(pat.length===2&&pat[0].length===2?2:3);
+ let rows=pat.map(r=>r.padEnd(sz,'.'));while(rows.length<sz)rows.push('.'.repeat(sz));if(size===1){rows=['...','.'+pat[0]+'.','...']}
+ const cnt={};let cells='';rows.forEach(r=>[...r].forEach(ch=>{const k=ch==='M'?m:ch;if(k!=='.')cnt[k]=(cnt[k]||0)+1;cells+='<div class="c">'+(k==='.'?'':I[k][0])+'</div>'}));
+ const need=Object.entries(cnt).map(([k,v])=>I[k][1]+' <b>'+v+'개</b>').join(' + ');
+ return '<div class="r"><h3>'+icon+' '+name+'</h3><div class="row"><div class="t'+(sz===2?' s2':'')+'">'+cells+'</div><span class="arrow">➡️</span><div class="out">'+icon+'<small>'+n+'개</small></div></div><div class="need">'+need+'</div></div>'}
+function draw(g){document.getElementById('g-'+g).innerHTML=R[g].map(x=>card(x,cur[g])).join('');}
+Object.keys(R).forEach(draw);
+Object.entries(MATS).forEach(([g,list])=>{const box=document.getElementById('mat-'+g);list.forEach(([k,l])=>{const b=document.createElement('button');b.textContent=l;if(k===cur[g])b.className='on';b.onclick=()=>{cur[g]=k;[...box.children].forEach(x=>x.classList.toggle('on',x===b));draw(g)};box.appendChild(b)})});
+document.getElementById('legend').innerHTML=Object.values(I).map(([e,n])=>e+' '+n).map(x=>'<span>'+x+'</span>').join('');
+</script>
+</body>
+</html>
