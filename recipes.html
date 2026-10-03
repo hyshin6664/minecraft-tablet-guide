@@ -3,100 +3,289 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>마크 제작법</title>
+<title>마크 제작 백과</title>
 <style>
-:root{--bg:#f4fbf2;--card:#ffffff;--ink:#2b2b2b;--sub:#5f6b5c;--grass:#6cc04a;--dirt:#9b6b43;--sky:#cfeeff;--yel:#fff3c4;--pink:#ffd9e6;--line:#e3eadf;--accent:#3a8f2a;--slot:#8b8b8b;--slotb:#373737;--table:#c6c6c6}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17201a;--card:#222c25;--ink:#eef3ec;--sub:#a9b8a5;--sky:#1e3546;--yel:#3d3720;--pink:#40252f;--line:#33403a;--accent:#8fdc72;--table:#4a4f4b}}
-:root[data-theme="dark"]{--bg:#17201a;--card:#222c25;--ink:#eef3ec;--sub:#a9b8a5;--sky:#1e3546;--yel:#3d3720;--pink:#40252f;--line:#33403a;--accent:#8fdc72;--table:#4a4f4b}
+:root{--bg:#f4fbf2;--card:#ffffff;--ink:#2b2b2b;--sub:#5f6b5c;--grass:#6cc04a;--dirt:#9b6b43;--sky:#cfeeff;--yel:#fff3c4;--pink:#ffd9e6;--mint:#d8f5d0;--line:#e3eadf;--accent:#3a8f2a;--slot:#8b8b8b;--slotb:#373737;--table:#c6c6c6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17201a;--card:#222c25;--ink:#eef3ec;--sub:#a9b8a5;--sky:#1e3546;--yel:#3d3720;--pink:#40252f;--mint:#24402a;--line:#33403a;--accent:#8fdc72;--table:#4a4f4b}}
+:root[data-theme="dark"]{--bg:#17201a;--card:#222c25;--ink:#eef3ec;--sub:#a9b8a5;--sky:#1e3546;--yel:#3d3720;--pink:#40252f;--mint:#24402a;--line:#33403a;--accent:#8fdc72;--table:#4a4f4b}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","맑은 고딕",sans-serif;font-size:17px;line-height:1.55}
-header{background:linear-gradient(180deg,var(--grass) 0 60%,var(--dirt) 60% 100%);color:#fff;text-align:center;padding:22px 16px 26px}
+header{background:linear-gradient(180deg,var(--grass) 0 60%,var(--dirt) 60% 100%);color:#fff;text-align:center;padding:20px 16px 24px}
 header h1{margin:0;font-size:28px;text-shadow:2px 2px 0 #2d5a1e}
 .links a{color:#fff;font-weight:bold;background:#2d5a1e;padding:8px 14px;border-radius:20px;text-decoration:none;display:inline-block;margin:8px 3px 0}
-nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:2px solid var(--line);display:flex;gap:6px;overflow-x:auto;padding:8px 12px}
-nav a{flex:0 0 auto;border-radius:20px;padding:10px 14px;min-height:44px;font-size:15px;background:var(--sky);color:var(--ink);text-decoration:none}
-main{max-width:900px;margin:0 auto;padding:16px}
-h2{margin:22px 0 10px;font-size:23px;scroll-margin-top:70px}
-.box{border-radius:14px;padding:12px 14px;margin:10px 0;background:var(--yel)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
-.r{background:var(--card);border-radius:16px;padding:14px;box-shadow:0 3px 0 var(--line)}
-.r h3{margin:0 0 8px;font-size:19px}
-.row{display:flex;align-items:center;gap:10px}
-.t{display:grid;grid-template-columns:repeat(3,38px);gap:3px;background:var(--table);padding:5px;border-radius:6px}
-.t.s2{grid-template-columns:repeat(2,38px)}
-.c{width:38px;height:38px;background:var(--slot);border:2px solid var(--slotb);display:flex;align-items:center;justify-content:center;font-size:22px;border-radius:3px}
-.arrow{font-size:24px}
-.out{font-size:34px;text-align:center;min-width:56px}
-.out small{display:block;font-size:14px;font-weight:bold}
-.need{margin-top:8px;font-size:15px;color:var(--sub)}
-.need b{color:var(--ink)}
-.mat{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px}
-.mat button{border:2px solid var(--line);border-radius:20px;padding:8px 14px;min-height:44px;font:inherit;font-size:16px;background:var(--card);color:var(--ink);cursor:pointer}
-.mat button.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:bold}
-.legend{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:15px;color:var(--sub)}
+.top{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:2px solid var(--line);padding:8px 12px}
+#q{width:100%;font:inherit;font-size:18px;padding:10px 14px;border-radius:14px;border:2px solid var(--line);background:var(--bg);color:var(--ink);min-height:48px}
+.cats{display:flex;gap:6px;overflow-x:auto;margin-top:8px;padding-bottom:2px}
+.cats button{flex:0 0 auto;border:0;border-radius:20px;padding:9px 13px;min-height:44px;font:inherit;font-size:15px;background:var(--sky);color:var(--ink);cursor:pointer}
+.cats button.on{background:var(--accent);color:#fff;font-weight:bold}
+main{max-width:960px;margin:0 auto;padding:14px 16px 40px}
+.hint{border-radius:14px;padding:12px 14px;margin:0 0 12px;background:var(--yel)}
+.star{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px}
+.star button{flex:1 1 140px;border:3px solid #f2b705;background:var(--card);color:var(--ink);border-radius:16px;padding:12px;font:inherit;font-weight:bold;font-size:18px;cursor:pointer;min-height:56px}
+h2{font-size:21px;margin:18px 0 8px}
+.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:9px}
+.it{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:10px 6px;text-align:center;cursor:pointer;min-height:96px;font:inherit;color:var(--ink)}
+.it .e{font-size:34px;line-height:1.2;display:block}
+.it .n{font-size:15px;font-weight:bold;display:block;margin-top:4px;word-break:keep-all}
+.it .tag{font-size:12px;color:var(--sub)}
+#ov{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:20;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:12px}
+#ov.on{display:flex}
+.panel{background:var(--card);border-radius:20px;width:100%;max-width:640px;padding:16px;margin:auto 0}
+.bar{display:flex;gap:8px;align-items:center;margin-bottom:6px}
+.bar button{border:0;border-radius:14px;min-height:48px;min-width:48px;font:inherit;font-weight:bold;font-size:17px;cursor:pointer;padding:0 14px}
+.back{background:var(--sky);color:var(--ink)}
+.close{margin-left:auto;background:var(--pink);color:var(--ink)}
+.say{background:var(--yel);color:var(--ink)}
+.trail{font-size:14px;color:var(--sub);margin-bottom:6px;word-break:keep-all}
+.trail span{cursor:pointer;text-decoration:underline}
+.ttl{display:flex;align-items:center;gap:12px;margin:4px 0 10px}
+.ttl .e{font-size:56px;line-height:1}
+.ttl h3{margin:0;font-size:26px}
+.ttl .how{font-size:15px;color:var(--sub)}
+.row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0}
+.t{display:grid;grid-template-columns:repeat(3,52px);gap:4px;background:var(--table);padding:6px;border-radius:8px}
+.t.s2{grid-template-columns:repeat(2,52px)}
+.c{width:52px;height:52px;background:var(--slot);border:2px solid var(--slotb);display:flex;align-items:center;justify-content:center;font-size:30px;border-radius:3px;cursor:pointer}
+.c.x{cursor:default}
+.arrow{font-size:30px}
+.out{font-size:46px;text-align:center}
+.out small{display:block;font-size:16px;font-weight:bold}
+.sec{font-weight:bold;font-size:18px;margin:14px 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:flex;align-items:center;gap:8px;border:2px solid var(--line);border-radius:14px;padding:8px 12px;min-height:48px;background:var(--bg);font:inherit;color:var(--ink);cursor:pointer;font-size:16px}
+.chip .e{font-size:26px}
+.chip b{font-size:18px}
+.chip .go{font-size:13px;color:var(--accent);font-weight:bold}
+.note{border-radius:14px;padding:10px 12px;margin:10px 0;background:var(--mint)}
+.warn{background:var(--pink)}
+.furn{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.fbox{display:grid;grid-template-columns:52px 40px 52px;grid-template-rows:52px 30px 52px;gap:2px;background:var(--table);padding:8px;border-radius:8px;align-items:center;justify-items:center}
 </style>
 </head>
 <body>
-<header><h1>🧰 마크 제작법</h1>
+<header><h1>🧰 마크 제작 백과</h1>
 <div class="links"><a href="index.html">📘 하는 방법</a><a href="keys.html">⌨️ 단축키</a></div></header>
-<nav><a href="#furnace">🔥 화로</a><a href="#basic">🪵 기본</a><a href="#tools">⛏️ 도구</a><a href="#armor">🦺 갑옷</a><a href="#fight">🏹 싸움</a><a href="#home">🏠 집·생활</a><a href="#light">🔥 빛</a></nav>
+<div class="top"><input id="q" placeholder="🔍 찾고 싶은 물건 이름 (예: 화로, 보트)" autocomplete="off"><div class="cats" id="cats"></div></div>
 <main>
-<div class="box">🧰 <b>작업대</b>를 오른쪽 클릭하면 3×3 칸이 나와요. 아래 그림처럼 <b>똑같은 자리에</b> 재료를 놓으면 오른쪽에 물건이 생겨요.<br>📖 왼쪽 <b>레시피 책</b>을 누르고 원하는 물건을 누르면 자동으로 놓아줘요!</div>
-<div class="legend" id="legend"></div>
-
-<h2 id="furnace">🔥 화로 만들기 (윤오 추천!)</h2>
-<div class="r" style="margin-bottom:12px">
-<h3>1단계 · 조약돌 8개 모으기</h3>
-<div class="need" style="font-size:17px;color:var(--ink)">⛏️ <b>나무 곡괭이부터 만들어요</b> (판자 3 + 막대기 2).<br>🪨 회색 <b>돌</b>을 곡괭이로 캐면 <b>조약돌</b>이 나와요. 맨손으로 캐면 아무것도 안 나와요!<br>💡 땅을 조금만 파 내려가면 돌이 많이 있어요. <b>심층암 조약돌</b>도 화로 재료로 돼요.</div>
-</div>
-<div class="r" style="margin-bottom:12px"><h3>2단계 · 작업대에 이렇게 놓기</h3>
-<div class="row"><div class="t"><div class="c">🪨</div><div class="c">🪨</div><div class="c">🪨</div><div class="c">🪨</div><div class="c"></div><div class="c">🪨</div><div class="c">🪨</div><div class="c">🪨</div><div class="c">🪨</div></div><span class="arrow">➡️</span><div class="out">🔥<small>화로</small></div></div>
-<div class="need">가운데만 비우고 빙 둘러 <b>조약돌 8개</b></div></div>
-<div class="r" style="margin-bottom:12px"><h3>3단계 · 화로 쓰는 법</h3>
-<div class="need" style="font-size:17px;color:var(--ink)">① 화로를 땅에 놓고 <b>오른쪽 클릭</b>으로 열어요.<br>② <b>위 칸</b> = 구울 것 · <b>아래 칸</b> = 땔감 · <b>오른쪽</b> = 완성!<br>🪵 땔감: 석탄·숯·원목·나무 판자 (석탄 1개로 8개 구워요)</div>
-<div class="grid" style="margin-top:10px">
-<div class="k" style="background:var(--bg);border-radius:12px;padding:8px 10px">🍖 날고기 ➡️ 구운 고기 (배가 더 불러요)</div>
-<div class="k" style="background:var(--bg);border-radius:12px;padding:8px 10px">🟤 철광석 원석 ➡️ ⚙️ 철 주괴</div>
-<div class="k" style="background:var(--bg);border-radius:12px;padding:8px 10px">🪵 원목 ➡️ ⚫ 숯 (횃불 재료!)</div>
-<div class="k" style="background:var(--bg);border-radius:12px;padding:8px 10px">🟡 모래 ➡️ 🪟 유리</div>
-<div class="k" style="background:var(--bg);border-radius:12px;padding:8px 10px">🪨 조약돌 ➡️ 매끈한 돌</div>
-</div></div>
-
-<h2 id="basic">🪵 제일 먼저 만들 것</h2><div class="grid" id="g-basic"></div>
-
-<h2 id="tools">⛏️ 도구 (재료를 골라 보세요)</h2>
-<div class="mat" id="mat-tools"></div>
-<div class="grid" id="g-tools"></div>
-<div class="box">튼튼한 순서: 🪵 나무 &lt; 🪨 돌 &lt; ⚙️ 철 &lt; 💎 다이아몬드. (금은 빠르지만 금방 부서져요)<br>💡 <b>철은 돌 곡괭이 이상</b>, <b>다이아몬드는 철 곡괭이 이상</b>으로 캐야 나와요!</div>
-
-<h2 id="armor">🦺 갑옷 (재료를 골라 보세요)</h2>
-<div class="mat" id="mat-armor"></div>
-<div class="grid" id="g-armor"></div>
-
-<h2 id="fight">🏹 싸움</h2><div class="grid" id="g-fight"></div>
-<h2 id="home">🏠 집·생활</h2><div class="grid" id="g-home"></div>
-<h2 id="light">🔥 빛</h2><div class="grid" id="g-light"></div>
+<div class="hint">👆 <b>물건을 누르면</b> 만드는 법이 나와요. 재료도 <b>또 누르면</b> 그 재료 만드는 법이 나와요! 계속 따라가 보세요.</div>
+<div class="star" id="star"></div>
+<div id="lists"></div>
 </main>
+<div id="ov"><div class="panel" id="panel"></div></div>
 <script>
-const I={P:['🟫','나무 판자'],L:['🪵','원목'],S:['🥢','막대기'],C:['🪨','조약돌'],c:['⚫','석탄(또는 숯)'],W:['⬜','양털'],I:['⚙️','철 주괴'],T:['🧵','실'],F:['🔺','부싯돌'],E:['🪶','깃털'],N:['🔘','철 조각'],H:['🔥','횃불'],w:['🌾','밀'],G:['🟨','금 주괴'],D:['💎','다이아몬드']};
-const MATS={tools:[['P','🪵 나무'],['C','🪨 돌'],['I','⚙️ 철'],['G','🟨 금'],['D','💎 다이아']],armor:[['I','⚙️ 철'],['G','🟨 금'],['D','💎 다이아']]};
-const R={
-basic:[['나무 판자','🟫',4,['L'],1],['막대기','🥢',4,['P','P'],1],['작업대','🧰',1,['PP','PP'],2],['화로','🔥',1,['CCC','C.C','CCC']],['상자','📦',1,['PPP','P.P','PPP']]],
-tools:[['곡괭이','⛏️',1,['MMM','.S.','.S.']],['도끼','🪓',1,['MM.','MS.','.S.']],['삽','🥄',1,['.M.','.S.','.S.']],['칼','🗡️',1,['.M.','.M.','.S.']],['괭이','🌱',1,['MM.','.S.','.S.']]],
-armor:[['투구','⛑️',1,['MMM','M.M','...']],['흉갑(옷)','🦺',1,['M.M','MMM','MMM']],['레깅스(바지)','👖',1,['MMM','M.M','M.M']],['부츠(신발)','🥾',1,['...','M.M','M.M']]],
-fight:[['활','🏹',1,['.ST','S.T','.ST']],['화살','➶',4,['.F.','.S.','.E.']],['방패','🛡️',1,['PIP','PPP','.P.']]],
-home:[['침대','🛏️',1,['...','WWW','PPP']],['문','🚪',3,['PP.','PP.','PP.']],['사다리','🪜',3,['S.S','SSS','S.S']],['보트','🛶',1,['...','P.P','PPP']],['양동이','🪣',1,['...','I.I','.I.']],['낚싯대','🎣',1,['..S','.ST','S.T']],['빵','🍞',1,['...','www','...']]],
-light:[['횃불','🔥',4,['.c.','.S.','...']],['철 조각','🔘',9,['I'],1],['랜턴','🏮',1,['NNN','NHN','NNN']]]};
-const cur={tools:'P',armor:'I'};
-function card([name,icon,n,pat,size],m){const sz=size||(pat.length===2&&pat[0].length===2?2:3);
- let rows=pat.map(r=>r.padEnd(sz,'.'));while(rows.length<sz)rows.push('.'.repeat(sz));if(size===1){rows=['...','.'+pat[0]+'.','...']}
- const cnt={};let cells='';rows.forEach(r=>[...r].forEach(ch=>{const k=ch==='M'?m:ch;if(k!=='.')cnt[k]=(cnt[k]||0)+1;cells+='<div class="c">'+(k==='.'?'':I[k][0])+'</div>'}));
- const need=Object.entries(cnt).map(([k,v])=>I[k][1]+' <b>'+v+'개</b>').join(' + ');
- return '<div class="r"><h3>'+icon+' '+name+'</h3><div class="row"><div class="t'+(sz===2?' s2':'')+'">'+cells+'</div><span class="arrow">➡️</span><div class="out">'+icon+'<small>'+n+'개</small></div></div><div class="need">'+need+'</div></div>'}
-function draw(g){document.getElementById('g-'+g).innerHTML=R[g].map(x=>card(x,cur[g])).join('');}
-Object.keys(R).forEach(draw);
-Object.entries(MATS).forEach(([g,list])=>{const box=document.getElementById('mat-'+g);list.forEach(([k,l])=>{const b=document.createElement('button');b.textContent=l;if(k===cur[g])b.className='on';b.onclick=()=>{cur[g]=k;[...box.children].forEach(x=>x.classList.toggle('on',x===b));draw(g)};box.appendChild(b)})});
-document.getElementById('legend').innerHTML=Object.values(I).map(([e,n])=>e+' '+n).map(x=>'<span>'+x+'</span>').join('');
+const D={},ORDER=[];
+const CATS=['기본','도구','갑옷','싸움','집·건축','생활 도구','음식','빛','탈것·레드스톤','마법·물약','재료 구하기'];
+function add(id,o){o.id=id;D[id]=o;ORDER.push(id)}
+// 재료 구하기 (캐거나 잡아서 얻는 것)
+function raw(id,n,e,where,tool){add(id,{n,e,cat:'재료 구하기',type:'raw',where,tool})}
+// 화로에 굽기
+function smelt(id,n,e,cat,from,tip){add(id,{n,e,cat,type:'smelt',from,tip})}
+// 작업대·가방에서 만들기
+function craft(id,n,e,cat,rows,keys,out,o={}){add(id,Object.assign({n,e,cat,type:'craft',rows,keys,out},o))}
+
+raw('log','원목','🪵','나무를 캐요. 맨손도 되지만 도끼가 빨라요.','맨손 OK');
+raw('cobblestone','조약돌','🪨','회색 돌을 곡괭이로 캐면 나와요. 땅을 조금만 파면 돌이 많아요. 심층암 조약돌도 대부분 대신 쓸 수 있어요.','나무 곡괭이 이상 (맨손이면 안 나와요!)');
+raw('coal','석탄','⚫','검은 점이 박힌 돌(석탄 광석)을 캐요. 산이나 동굴 벽에 많아요.','나무 곡괭이 이상');
+raw('raw_iron','철 원석','🟤','살구색 점이 박힌 돌(철광석)을 캐요. 동굴에 많아요.','돌 곡괭이 이상');
+raw('raw_gold','금 원석','🟡','노란 점이 박힌 돌(금광석)을 캐요. 깊은 곳에 있어요.','철 곡괭이 이상');
+raw('diamond','다이아몬드','💎','하늘색 점이 박힌 돌. 아주 깊은 곳(Y좌표 -58 근처)에 많아요. 용암 조심!','철 곡괭이 이상');
+raw('redstone','레드스톤 가루','🔴','빨간 점이 박힌 돌(레드스톤 광석). 깊은 곳에 있어요.','철 곡괭이 이상');
+raw('obsidian','흑요석','🟪','용암에 물이 닿으면 생겨요. 아주 단단해요.','다이아몬드 곡괭이만!');
+raw('sand','모래','🟨','바닷가·사막에 있어요. 삽으로 캐면 빨라요.','맨손 OK');
+raw('flint','부싯돌','🔺','자갈(회색 알갱이 블록)을 캐면 가끔 나와요. 여러 번 놓고 캐 보세요.','맨손 OK');
+raw('clay_ball','점토','🩶','물 밑에 있는 회색 점토 블록을 캐면 4개 나와요.','맨손 OK');
+raw('wool','양털','⬜','양을 잡거나 가위로 깎아요. 실 4개(2×2)로도 만들 수 있어요.','가위 있으면 좋아요');
+raw('string','실','🧵','거미를 잡거나 거미줄을 칼로 끊으면 나와요.','칼');
+raw('feather','깃털','🪶','닭을 잡으면 나와요.','');
+raw('leather','가죽','🟫','소·말을 잡으면 나와요.','');
+raw('bone','뼈','🦴','스켈레톤(해골)을 잡으면 나와요.','');
+raw('gunpowder','화약','💥','크리퍼를 잡으면 나와요. 터지기 전에!','');
+raw('slimeball','슬라임볼','🟢','슬라임을 잡으면 나와요. 늪이나 깊은 땅속에 나와요.','');
+raw('ender_pearl','엔더 진주','🔵','엔더맨(키 큰 검은 괴물)을 잡으면 나와요. 눈을 쳐다보면 화내요!','');
+raw('blaze_rod','블레이즈 막대','🟧','네더(지옥)의 요새에 사는 블레이즈를 잡으면 나와요.','');
+raw('nether_wart','네더 사마귀','🍄','네더(지옥) 요새 안 영혼 모래 위에 자라요.','');
+raw('wheat','밀','🌾','풀을 부수면 씨앗이 나와요. 괭이로 땅을 갈고 물 옆에 심어요.','괭이');
+raw('sugar_cane','사탕수수','🎋','물가 모래·흙 위에 자라는 초록 막대. 위쪽만 캐면 또 자라요.','');
+raw('egg','달걀','🥚','닭이 가끔 낳아요.','');
+raw('milk','우유 양동이','🥛','양동이를 들고 소에게 오른쪽 클릭!','양동이');
+raw('apple','사과','🍎','참나무 잎을 부수면 가끔 떨어져요.','');
+raw('carrot','당근','🥕','마을 밭에서 얻거나 좀비가 가끔 떨어뜨려요. 심으면 자라요.','');
+raw('potato','감자','🥔','마을 밭에서 얻어요. 심으면 자라요.','');
+raw('pumpkin','호박','🎃','풀밭에 가끔 있어요.','');
+raw('beef','날 소고기','🥩','소를 잡으면 나와요.','');
+raw('porkchop','날 돼지고기','🍖','돼지를 잡으면 나와요.','');
+raw('chicken','날 닭고기','🍗','닭을 잡으면 나와요.','');
+raw('mutton','날 양고기','🍖','양을 잡으면 나와요.','');
+raw('cod','날 대구','🐟','낚시하거나 물고기를 잡아요.','');
+raw('water_bottle','물병','💧','유리병을 들고 물에 오른쪽 클릭!','유리병');
+
+// 기본
+craft('planks','나무 판자','🟫','기본',['L'],{L:'log'},4,{small:1,shapeless:1});
+craft('stick','막대기','🥢','기본',['P','P'],{P:'planks'},4,{small:1});
+craft('crafting_table','작업대','🧰','기본',['PP','PP'],{P:'planks'},1,{small:1,tip:'땅에 놓고 오른쪽 클릭하면 3×3 칸이 나와요.'});
+craft('furnace','화로','🔥','기본',['CCC','C.C','CCC'],{C:'cobblestone'},1,{tip:'가운데만 비우고 빙 둘러 조약돌 8개! 땅에 놓고 오른쪽 클릭 → 위 칸=구울 것, 아래 칸=땔감(석탄·숯·원목·판자). 석탄 1개로 8개 구워요.'});
+craft('chest','상자','📦','기본',['PPP','P.P','PPP'],{P:'planks'},1,{tip:'상자 2개를 붙여 놓으면 큰 상자가 돼요.'});
+craft('torch','횃불','🕯️','빛',['c','S'],{c:'coal',S:'stick'},4,{tip:'석탄 대신 숯을 써도 돼요! 횃불은 벽이나 바닥에 꽂아야 빛이 나요.'});
+
+// 도구·갑옷 (재료별로 자동)
+const TM=[['wood','나무','planks'],['stone','돌','cobblestone'],['iron','철','iron_ingot'],['gold','금','gold_ingot'],['diamond','다이아몬드','diamond']];
+const TOOLS=[['pickaxe','곡괭이','⛏️',['MMM','.S.','.S.'],'돌·광석 캐기'],['axe','도끼','🪓',['MM','MS','.S'],'나무 빨리 캐기'],['shovel','삽','🥄',['M','S','S'],'흙·모래 빨리 캐기'],['sword','칼','🗡️',['M','M','S'],'괴물과 싸우기'],['hoe','괭이','🌱',['MM','.S','.S'],'밭 갈기']];
+TOOLS.forEach(([t,tn,te,rows,use])=>TM.forEach(([m,mn,mid])=>craft(m+'_'+t,mn+' '+tn,te,'도구',rows,{M:mid,S:'stick'},1,{tip:use+'에 써요.'+(t==='pickaxe'?{wood:' 돌·석탄까지 캘 수 있어요.',stone:' 철광석까지 캘 수 있어요.',iron:' 금·다이아몬드·레드스톤까지 캘 수 있어요.',gold:' 빠르지만 금방 부서지고, 나무 곡괭이만큼만 캘 수 있어요.',diamond:' 흑요석까지 다 캘 수 있어요!'}[m]:'')})));
+const AM=[['leather','가죽','leather'],['iron','철','iron_ingot'],['gold','금','gold_ingot'],['diamond','다이아몬드','diamond']];
+const ARM=[['helmet','투구','⛑️',['MMM','M.M']],['chestplate','흉갑','🦺',['M.M','MMM','MMM']],['leggings','레깅스','👖',['MMM','M.M','M.M']],['boots','부츠','🥾',['M.M','M.M']]];
+ARM.forEach(([a,an,ae,rows])=>AM.forEach(([m,mn,mid])=>craft(m+'_'+a,mn+' '+an,ae,'갑옷',rows,{M:mid},1,{tip:'가방(E)을 열고 캐릭터 옆 갑옷 칸에 넣으면 입어요.'})));
+
+// 싸움
+craft('bow','활','🏹','싸움',['.ST','S.T','.ST'],{S:'stick',T:'string'},1,{tip:'오른쪽 버튼을 꾹 눌렀다 떼면 화살이 날아가요. 화살이 가방에 있어야 해요.'});
+craft('arrow','화살','➶','싸움',['F','S','E'],{F:'flint',S:'stick',E:'feather'},4);
+craft('shield','방패','🛡️','싸움',['PIP','PPP','.P.'],{P:'planks',I:'iron_ingot'},1,{tip:'왼손 칸에 넣고, 오른쪽 버튼을 꾹 누르면 막아요.'});
+craft('tripwire_hook','철사 덫 갈고리','🪝','싸움',['I','S','P'],{I:'iron_ingot',S:'stick',P:'planks'},2);
+craft('crossbow','쇠뇌','🏹','싸움',['SIS','THT','.S.'],{S:'stick',I:'iron_ingot',T:'string',H:'tripwire_hook'},1);
+craft('tnt','TNT','🧨','싸움',['GSG','SGS','GSG'],{G:'gunpowder',S:'sand'},1,{tip:'부싯돌과 부시로 불을 붙여요. 집 근처에선 절대 안 돼요!'});
+
+// 집·건축
+craft('bed','침대','🛏️','집·건축',['WWW','PPP'],{W:'wool',P:'planks'},1,{tip:'양털 3개는 같은 색이어야 해요. 밤에 자면 괴물 시간을 건너뛰고, 죽으면 침대에서 다시 시작해요.'});
+craft('door','나무 문','🚪','집·건축',['PP','PP','PP'],{P:'planks'},3,{tip:'문이 있으면 좀비가 덜 들어와요.'});
+craft('trapdoor','나무 다락문','🟫','집·건축',['PPP','PPP'],{P:'planks'},2);
+craft('fence','나무 울타리','🚧','집·건축',['PSP','PSP'],{P:'planks',S:'stick'},3,{tip:'동물이 못 넘어가요.'});
+craft('fence_gate','울타리 문','🚧','집·건축',['SPS','SPS'],{S:'stick',P:'planks'},1);
+craft('ladder','사다리','🪜','집·건축',['S.S','SSS','S.S'],{S:'stick'},3);
+craft('slab','나무 반 블록','▬','집·건축',['PPP'],{P:'planks'},6);
+craft('stairs','나무 계단','📶','집·건축',['P..','PP.','PPP'],{P:'planks'},4);
+craft('cobble_stairs','조약돌 계단','📶','집·건축',['C..','CC.','CCC'],{C:'cobblestone'},4);
+craft('glass_pane','유리판','🪟','집·건축',['GGG','GGG'],{G:'glass'},16,{tip:'창문 만들기 좋아요.'});
+craft('stone_bricks','석재 벽돌','🧱','집·건축',['SS','SS'],{S:'stone'},4,{small:1});
+craft('bricks','벽돌 블록','🧱','집·건축',['BB','BB'],{B:'brick'},1,{small:1});
+craft('bookshelf','책장','📚','집·건축',['PPP','BBB','PPP'],{P:'planks',B:'book'},1,{tip:'마법 부여대 주변에 놓으면 더 센 마법이 나와요.'});
+craft('carpet','양탄자','🟥','집·건축',['WW'],{W:'wool'},3,{small:1});
+craft('painting','그림','🖼️','집·건축',['SSS','SWS','SSS'],{S:'stick',W:'wool'},1,{tip:'벽에 걸면 그림이 무작위로 나와요.'});
+craft('item_frame','아이템 액자','🖼️','집·건축',['SSS','SLS','SSS'],{S:'stick',L:'leather'},1);
+
+// 생활 도구
+craft('bucket','양동이','🪣','생활 도구',['I.I','.I.'],{I:'iron_ingot'},1,{tip:'물·용암·우유를 담을 수 있어요.'});
+craft('fishing_rod','낚싯대','🎣','생활 도구',['..S','.ST','S.T'],{S:'stick',T:'string'},1,{tip:'물에 던지고 찌가 쏙 들어가면 오른쪽 클릭!'});
+craft('shears','가위','✂️','생활 도구',['.I','I.'],{I:'iron_ingot'},1,{small:1,tip:'양털 깎기, 나뭇잎 캐기.'});
+craft('flint_and_steel','부싯돌과 부시','🔥','생활 도구',['I.','.F'],{I:'iron_ingot',F:'flint'},1,{small:1,shapeless:1,tip:'불 붙이기·네더 차원문 켜기.'});
+craft('compass','나침반','🧭','생활 도구',['.I.','IRI','.I.'],{I:'iron_ingot',R:'redstone'},1,{tip:'처음 시작한 곳을 가리켜요.'});
+craft('clock','시계','🕐','생활 도구',['.G.','GRG','.G.'],{G:'gold_ingot',R:'redstone'},1);
+craft('paper','종이','📄','생활 도구',['SSS'],{S:'sugar_cane'},3);
+craft('map','지도','🗺️','생활 도구',['PPP','PCP','PPP'],{P:'paper',C:'compass'},1,{tip:'태블릿 마크에선 「위치 표시 빈 지도」가 나와요. 들고 오른쪽 클릭하면 지도가 그려져요.'});
+craft('book','책','📕','생활 도구',['PP.','PL.'],{P:'paper',L:'leather'},1,{small:1,shapeless:1});
+craft('bowl','그릇','🥣','생활 도구',['P.P','.P.'],{P:'planks'},4);
+craft('glass_bottle','유리병','🧪','생활 도구',['G.G','.G.'],{G:'glass'},3);
+craft('lead','끈','➰','생활 도구',['TT.','TB.','..T'],{T:'string',B:'slimeball'},2,{tip:'동물에게 묶어서 데리고 다녀요.'});
+craft('bone_meal','뼈가루','🦴','생활 도구',['B'],{B:'bone'},3,{small:1,tip:'식물에 뿌리면 쑥쑥 자라요.'});
+craft('iron_block','철 블록','⬜','생활 도구',['III','III','III'],{I:'iron_ingot'},1);
+craft('anvil','모루','⚒️','생활 도구',['BBB','.I.','III'],{B:'iron_block',I:'iron_ingot'},1,{tip:'도구 고치기·이름 붙이기.'});
+craft('smithing_table','대장장이 작업대','🔨','생활 도구',['II','PP','PP'],{I:'iron_ingot',P:'planks'},1);
+craft('smoker','훈연기','♨️','생활 도구',['.L.','LFL','.L.'],{L:'log',F:'furnace'},1,{tip:'고기를 화로보다 2배 빨리 구워요.'});
+craft('blast_furnace','용광로','🏭','생활 도구',['III','IFI','SSS'],{I:'iron_ingot',F:'furnace',S:'smooth_stone'},1,{tip:'광석을 화로보다 2배 빨리 녹여요.'});
+craft('hopper','깔때기','🔻','생활 도구',['I.I','ICI','.I.'],{I:'iron_ingot',C:'chest'},1);
+
+// 음식
+craft('bread','빵','🍞','음식',['WWW'],{W:'wheat'},1);
+craft('sugar','설탕','🍬','음식',['S'],{S:'sugar_cane'},1,{small:1});
+craft('cake','케이크','🎂','음식',['MMM','SES','WWW'],{M:'milk',S:'sugar',E:'egg',W:'wheat'},1,{tip:'바닥에 놓고 오른쪽 클릭으로 한 조각씩 먹어요. 우유를 다 쓰면 양동이는 돌려받아요.'});
+craft('pumpkin_pie','호박 파이','🥧','음식',['PS.','E..'],{P:'pumpkin',S:'sugar',E:'egg'},1,{small:1,shapeless:1});
+craft('gold_nugget','금 조각','🔸','음식',['G'],{G:'gold_ingot'},9,{small:1});
+craft('golden_carrot','황금 당근','🥕','음식',['NNN','NCN','NNN'],{N:'gold_nugget',C:'carrot'},1,{tip:'배가 아주 많이 불러요. 야간 투시 물약 재료!'});
+craft('golden_apple','황금 사과','🍏','음식',['GGG','GAG','GGG'],{G:'gold_ingot',A:'apple'},1,{tip:'먹으면 체력이 빨리 차요.'});
+smelt('steak','스테이크','🥩','음식','beef','배가 제일 많이 불러요.');
+smelt('cooked_porkchop','구운 돼지고기','🍖','음식','porkchop');
+smelt('cooked_chicken','구운 닭고기','🍗','음식','chicken','날 닭고기는 먹으면 배탈 나요. 꼭 구워 먹어요!');
+smelt('cooked_mutton','구운 양고기','🍖','음식','mutton');
+smelt('cooked_cod','구운 대구','🐟','음식','cod');
+smelt('baked_potato','구운 감자','🥔','음식','potato');
+
+// 화로에서 굽는 재료
+smelt('iron_ingot','철 주괴','⚙️','기본','raw_iron','철 도구·갑옷·양동이에 많이 써요.');
+smelt('gold_ingot','금 주괴','🟨','기본','raw_gold');
+smelt('charcoal','숯','⚫','빛','log','석탄 대신 횃불 만들 때 써요! 석탄이 없으면 이걸로.');
+smelt('glass','유리','🔲','집·건축','sand');
+smelt('stone','돌','◻️','집·건축','cobblestone');
+smelt('smooth_stone','매끈한 돌','⬜','집·건축','stone');
+smelt('brick','벽돌','🧱','집·건축','clay_ball');
+
+// 빛
+craft('iron_nugget','철 조각','🔘','빛',['I'],{I:'iron_ingot'},9,{small:1});
+craft('lantern','랜턴','🏮','빛',['NNN','NHN','NNN'],{N:'iron_nugget',H:'torch'},1,{tip:'횃불보다 조금 더 밝고 예뻐요.'});
+craft('campfire','모닥불','🔥','빛',['.S.','ScS','LLL'],{S:'stick',c:'coal',L:'log'},1,{tip:'위에 고기를 올려 구울 수도 있어요. 밟으면 뜨거워요!'});
+craft('redstone_torch','레드스톤 횃불','🔴','탈것·레드스톤',['R','S'],{R:'redstone',S:'stick'},1,{small:1});
+
+// 탈것·레드스톤
+craft('boat','보트','🛶','탈것·레드스톤',['P.P','PPP'],{P:'planks'},1,{tip:'물에 놓고 오른쪽 클릭하면 타요. W로 앞, A·D로 방향. 내릴 땐 Shift! 같은 나무 판자 5개(참나무끼리, 자작나무끼리)로 만들어요.'});
+craft('rail','레일','🛤️','탈것·레드스톤',['I.I','ISI','I.I'],{I:'iron_ingot',S:'stick'},16);
+craft('minecart','광산 수레','🛒','탈것·레드스톤',['I.I','III'],{I:'iron_ingot'},1,{tip:'레일 위에 놓고 타요.'});
+craft('lever','레버','🎚️','탈것·레드스톤',['S','C'],{S:'stick',C:'cobblestone'},1,{small:1});
+craft('stone_button','돌 버튼','🔘','탈것·레드스톤',['S'],{S:'stone'},1,{small:1});
+craft('pressure_plate','나무 압력판','▭','탈것·레드스톤',['PP'],{P:'planks'},1,{small:1,tip:'밟으면 문이 열리게 할 수 있어요.'});
+craft('piston','피스톤','🟫','탈것·레드스톤',['PPP','CIC','CRC'],{P:'planks',C:'cobblestone',I:'iron_ingot',R:'redstone'},1);
+
+// 마법·물약
+craft('enchanting_table','마법 부여대','📖','마법·물약',['.B.','DOD','OOO'],{B:'book',D:'diamond',O:'obsidian'},1,{tip:'도구에 마법을 걸어요. 경험치(초록 구슬)와 청금석이 필요해요.'});
+craft('brewing_stand','양조기','⚗️','마법·물약',['.R.','CCC'],{R:'blaze_rod',C:'cobblestone'},1,{tip:'물약을 만들어요. 땔감으로 블레이즈 가루가 필요해요.'});
+craft('blaze_powder','블레이즈 가루','🟠','마법·물약',['R'],{R:'blaze_rod'},2,{small:1});
+craft('ender_eye','엔더의 눈','👁️','마법·물약',['PB'],{P:'ender_pearl',B:'blaze_powder'},1,{small:1,shapeless:1,tip:'던지면 엔드 차원문 쪽으로 날아가요.'});
+add('awkward_potion',{n:'어색한 물약',e:'🧪',cat:'마법·물약',type:'brew',base:'water_bottle',add:'nether_wart',tip:'모든 물약의 시작이에요.'});
+add('night_vision',{n:'야간 투시 물약',e:'🌙',cat:'마법·물약',type:'brew',base:'awkward_potion',add:'golden_carrot',tip:'마시면 3분 동안 깜깜한 동굴도 낮처럼 보여요!'});
+
+// ───── 화면
+const STAR=['furnace','boat','torch','crafting_table','bed'];
+let cat='전체',stack=[];
+const catBox=document.getElementById('cats');
+['전체',...CATS].forEach(c=>{const b=document.createElement('button');b.textContent=c;if(c===cat)b.className='on';b.onclick=()=>{cat=c;[...catBox.children].forEach(x=>x.classList.toggle('on',x===b));render()};catBox.appendChild(b)});
+document.getElementById('star').innerHTML=STAR.map(id=>'<button data-id="'+id+'">⭐ '+D[id].e+' '+D[id].n+'</button>').join('');
+document.getElementById('star').onclick=e=>{const b=e.target.closest('button');if(b)open1(b.dataset.id)};
+function tile(id){const x=D[id];const tag={raw:'캐거나 잡기',smelt:'화로',brew:'양조기',craft:x.small?'가방·작업대':'작업대'}[x.type];return '<button class="it" data-id="'+id+'"><span class="e">'+x.e+'</span><span class="n">'+x.n+'</span><span class="tag">'+tag+'</span></button>'}
+function render(){const q=document.getElementById('q').value.trim();let h='';
+ (cat==='전체'?CATS:[cat]).forEach(c=>{const ids=ORDER.filter(id=>D[id].cat===c&&(!q||D[id].n.includes(q)));if(ids.length)h+='<h2>'+c+' ('+ids.length+')</h2><div class="list">'+ids.map(tile).join('')+'</div>'});
+ document.getElementById('lists').innerHTML=h||'<p>못 찾았어요. 다른 이름으로 찾아보세요.</p>'}
+document.getElementById('q').oninput=render;
+document.getElementById('lists').onclick=e=>{const b=e.target.closest('.it');if(b)open1(b.dataset.id)};
+
+// 재료 개수 세기
+function needs(x){const m={};if(x.type==='craft')x.rows.forEach(r=>[...r].forEach(ch=>{if(ch!=='.'){const k=x.keys[ch];m[k]=(m[k]||0)+1}}));if(x.type==='smelt')m[x.from]=1;if(x.type==='brew'){m[x.base]=1;m[x.add]=1}return m}
+const DEPTH={};function depth(id){if(id in DEPTH)return DEPTH[id];const x=D[id];if(x.type==='raw')return DEPTH[id]=0;DEPTH[id]=0;let d=0;Object.keys(needs(x)).forEach(k=>d=Math.max(d,depth(k)));return DEPTH[id]=d+1}
+// 처음부터 모아야 할 재료 합계 (남는 것은 다음에 쓰기)
+function totalRaw(id){const need={[id]:1};let ok=true;
+ while(true){const todo=Object.keys(need).filter(k=>D[k].type!=='raw'&&need[k]>0);if(!todo.length)break;todo.sort((a,b)=>depth(b)-depth(a));const k=todo[0];const x=D[k];const outN=x.type==='craft'?x.out:1;const times=Math.ceil(need[k]/outN);delete need[k];
+  Object.entries(needs(x)).forEach(([r,c])=>need[r]=(need[r]||0)+c*times)}
+ return need}
+function usedIn(id){return ORDER.filter(k=>needs(D[k])[id])}
+function chip(id,c){const x=D[id];const go=x.type==='raw'?'어디서? 👆':'만드는 법 👆';return '<button class="chip" data-id="'+id+'"><span class="e">'+x.e+'</span><span>'+x.n+(c?' <b>'+c+'개</b>':'')+'<br><span class="go">'+go+'</span></span></button>'}
+function grid(x){let rows=x.rows.slice();const sz=x.small?2:3;rows=rows.map(r=>r.padEnd(sz,'.'));while(rows.length<sz)rows.push('.'.repeat(sz));
+ if(sz===3&&x.rows.length<3&&x.rows.every(r=>r.length<=1)){rows=x.rows.map(r=>'.'+r+'.');while(rows.length<3)rows.push('...')}
+ return '<div class="t'+(sz===2?' s2':'')+'">'+rows.map(r=>[...r].map(ch=>ch==='.'?'<div class="c x"></div>':'<div class="c" data-id="'+x.keys[ch]+'" title="'+D[x.keys[ch]].n+'">'+D[x.keys[ch]].e+'</div>').join('')).join('')+'</div>'}
+function show(){const id=stack[stack.length-1];const x=D[id];let h='<div class="bar">'+(stack.length>1?'<button class="back">◀ 뒤로</button>':'')+'<button class="say">🔊</button><button class="close">✕ 닫기</button></div>';
+ if(stack.length>1)h+='<div class="trail">'+stack.map((s,i)=>i<stack.length-1?'<span data-i="'+i+'">'+D[s].e+' '+D[s].n+'</span> ▸ ':'<b>'+D[s].e+' '+D[s].n+'</b>').join('')+'</div>';
+ const how={raw:'캐거나 잡아서 얻어요',smelt:'🔥 화로에 구워서 만들어요',brew:'⚗️ 양조기에서 만들어요',craft:x.small?'🎒 가방(E)에서도 만들 수 있어요 (2×2)':'🧰 작업대에서 만들어요'}[x.type];
+ h+='<div class="ttl"><span class="e">'+x.e+'</span><div><h3>'+x.n+'</h3><div class="how">'+how+'</div></div></div>';
+ if(x.type==='raw'){h+='<div class="note">📍 <b>어디서?</b> '+x.where+'</div>'+(x.tool?'<div class="note">⛏️ <b>필요한 도구:</b> '+x.tool+'</div>':'')}
+ if(x.type==='craft'){h+='<div class="row">'+grid(x)+'<span class="arrow">➡️</span><div class="out">'+x.e+'<small>'+x.out+'개 나와요</small></div></div>';if(x.shapeless)h+='<div class="note">💡 이건 <b>아무 칸에 놓아도</b> 돼요.</div>'}
+ if(x.type==='smelt'){const f=D[x.from];h+='<div class="furn"><div class="fbox"><div class="c" data-id="'+x.from+'">'+f.e+'</div><div></div><div></div><div style="font-size:22px">🔥</div><div class="arrow">➡️</div><div class="c x">'+x.e+'</div><div class="c" data-id="coal">⚫</div><div></div><div></div></div><div>위 칸: <b>'+f.n+'</b><br>아래 칸: <b>땔감</b> (석탄·숯·원목·판자)<br>오른쪽: <b>'+x.n+'</b> 완성!</div></div>'}
+ if(x.type==='brew'){h+='<div class="note">⚗️ 양조기 아래 칸에 <b>'+D[x.base].n+'</b>, 위 칸에 <b>'+D[x.add].n+'</b>, 왼쪽 위에 땔감 <b>블레이즈 가루</b>를 넣어요.</div>'}
+ const n=needs(x);if(Object.keys(n).length){h+='<div class="sec">🧺 필요한 재료 (눌러 보세요!)</div><div class="chips">'+Object.entries(n).map(([k,c])=>chip(k,c)).join('')+'</div>'}
+ if(x.type!=='raw'){const t=totalRaw(id);const ks=Object.keys(t);const direct=Object.keys(n);if(!(ks.length===direct.length&&ks.every(k=>n[k]===t[k]))){h+='<div class="sec">🌱 처음부터 모으면 이만큼!</div><div class="chips">'+ks.map(k=>chip(k,t[k])).join('')+'</div>'}}
+ if(x.tip)h+='<div class="note">💡 '+x.tip+'</div>';
+ if(x.type==='smelt'||x.type==='brew'||ORDER.some(k=>D[k].type==='smelt'&&needs(x)[k]))h+='';
+ const u=usedIn(id);if(u.length)h+='<div class="sec">🔁 이걸로 만들 수 있는 것</div><div class="chips">'+u.map(k=>chip(k)).join('')+'</div>';
+ document.getElementById('panel').innerHTML=h;document.getElementById('ov').classList.add('on');document.getElementById('ov').scrollTop=0}
+function open1(id){stack=[id];show()}
+document.getElementById('panel').onclick=e=>{const t=e.target;
+ if(t.closest('.close')){stopSay();document.getElementById('ov').classList.remove('on');return}
+ if(t.closest('.back')){stopSay();stack.pop();show();return}
+ if(t.closest('.say')){sayNow();return}
+ const tr=t.closest('.trail span');if(tr){stack=stack.slice(0,+tr.dataset.i+1);show();return}
+ const c=t.closest('[data-id]');if(c&&!c.classList.contains('x')){stopSay();stack.push(c.dataset.id);show()}};
+document.getElementById('ov').onclick=e=>{if(e.target.id==='ov'){stopSay();e.target.classList.remove('on')}};
+// 읽어주기
+let gen=0;function stopSay(){gen++;try{speechSynthesis.cancel()}catch(e){}}
+function sayNow(){stopSay();const my=gen;const x=D[stack[stack.length-1]];let s=x.n+'. ';
+ if(x.type==='raw')s+=x.where+' '+(x.tool?'필요한 도구는 '+x.tool+'.':'');else{s+=Object.entries(needs(x)).map(([k,c])=>D[k].n+' '+c+'개').join(', ')+'가 필요해요. '+(x.tip||'')}
+ const parts=s.split(/(?<=[.!?])\s+/);let i=0;const v=speechSynthesis.getVoices();const vo=v.find(z=>z.lang==='ko-KR'&&/Google/.test(z.name))||v.find(z=>z.lang&&z.lang.startsWith('ko'));
+ (function nx(){if(my!==gen||i>=parts.length)return;const u=new SpeechSynthesisUtterance(parts[i++]);u.lang='ko-KR';u.pitch=1.6;u.rate=1.02;if(vo)u.voice=vo;u.onend=nx;u.onerror=nx;speechSynthesis.speak(u)})()}
+try{speechSynthesis.getVoices()}catch(e){}
+render();
 </script>
 </body>
 </html>

@@ -44,7 +44,7 @@ svg{max-width:100%;height:auto;display:block;margin:8px auto}
 </style>
 </head>
 <body>
-<header><h1>⛏️ 마크 하는 방법</h1><p style="margin:8px 0 0"><a href="keys.html" style="color:#fff;font-weight:bold;background:#2d5a1e;padding:8px 14px;border-radius:20px;text-decoration:none;display:inline-block">⌨️ 단축키 보러 가기 →</a> <a href="recipes.html" style="color:#fff;font-weight:bold;background:#2d5a1e;padding:8px 14px;border-radius:20px;text-decoration:none;display:inline-block">🧰 제작법(화로) →</a></p></header>
+<header><h1>⛏️ 마크 하는 방법</h1><p style="margin:8px 0 0"><a href="keys.html" style="color:#fff;font-weight:bold;background:#2d5a1e;padding:8px 14px;border-radius:20px;text-decoration:none;display:inline-block">⌨️ 단축키 보러 가기 →</a> <a href="recipes.html" style="color:#fff;font-weight:bold;background:#2d5a1e;padding:8px 14px;border-radius:20px;text-decoration:none;display:inline-block">🧰 제작 백과 →</a></p></header>
 <nav id="nav"></nav>
 <main>
 
@@ -164,6 +164,43 @@ svg{max-width:100%;height:auto;display:block;margin:8px auto}
 </div>
 </section>
 
+<section data-t="🏘️ 마을·말">
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h2>🐴 말 길들이기 – 당근 없어도 돼요!</h2>
+<p class="big">말은 <b>그냥 여러 번 올라타면</b> 길들여져요.</p>
+<ol class="steps">
+<li>손에 <b>아무것도 안 들고</b> 말에게 <b>오른쪽 클릭</b> → 올라타요.</li>
+<li>말이 화내며 <b>떨어뜨려요.</b> 괜찮아요! 또 타요.</li>
+<li>몇 번 하다 보면 <b>빨간 하트 ❤️</b>가 뿅 나와요. 길들이기 성공!</li>
+<li>말을 조종하려면 <b>안장</b>이 필요해요. 말을 타고 <kbd>E</kbd>를 눌러 안장 칸에 넣어요.</li>
+</ol>
+<div class="box yel">🍎 <b>사과·설탕·밀</b>을 먼저 먹이면 더 빨리 길들여져요. (황금 당근은 말 2마리를 아기 낳게 할 때 써요)</div>
+<div class="box pink">🪑 <b>안장은 만들 수 없어요!</b> 마을·던전·사원 같은 곳의 <b>상자</b>에서 찾거나, <b>낚시</b>로 가끔 나와요. 마을의 <b>가죽 장인 주민</b>에게 에메랄드로 살 수도 있어요.</div>
+<div class="box sky">🐷 <b>당근이 꼭 필요한 건 돼지예요!</b> 돼지는 안장 + <b>당근 낚싯대</b>(낚싯대 + 당근)로 조종해요.</div>
+</div>
+
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h2>🏘️ 마을 찾아가기</h2>
+<ol class="steps">
+<li>마을은 <b>평원(넓은 풀밭)·사막·사바나·타이가(가문비 숲)·눈밭</b>에 많아요.</li>
+<li><b>높은 산이나 나무 꼭대기</b>에 올라가서 둘러봐요. 집 지붕, 밭, <b>흙길</b>이 보이면 마을!</li>
+<li><b>흙길을 따라가면</b> 마을 가운데로 가요.</li>
+<li>가기 전에 <b>침대</b>를 챙겨 마을에서 자면, 죽어도 마을에서 다시 시작해요.</li>
+<li>길을 잃지 않게 <kbd>Esc</kbd> → 설정 → <b>좌표 보기</b>를 켜 두면 좋아요. (세계 설정에서 켤 수 있어요)</li>
+</ol>
+</div>
+
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h2>🥕 당근 얻는 법</h2>
+<ol class="steps">
+<li>마을 <b>밭</b>에서 주황색 당근이 다 자란 걸 캐요. (덜 자라면 1개만 나와요)</li>
+<li>당근을 <b>심으면</b> 또 자라요! 괭이로 흙을 갈고 <b>물 옆</b>에 당근을 꽂아요.</li>
+<li>좀비를 잡으면 아주 가끔 당근을 떨어뜨려요.</li>
+</ol>
+<div class="box yel">💎 주민은 <b>에메랄드</b>로 거래해요. 주민에게 오른쪽 클릭하면 거래 창이 나와요. 농부 주민은 내가 키운 당근·밀을 주면 에메랄드를 줘요.</div>
+</div>
+</section>
+
 <section data-t="🛡️ 안전 꿀팁">
 <div class="card"><button class="say" aria-label="읽어주기">🔊</button>
 <h2>🛡️ 안전 꿀팁</h2>
@@ -213,6 +250,7 @@ const Q=[
  ['블록을 놓을 때 누르는 건?',['마우스 왼쪽','마우스 오른쪽','Esc'],1],
  ['낭떠러지에서 안 떨어지게 걸으려면?',['Ctrl','Shift','Q'],1],
  ['횃불로 동굴을 밝히려면?',['손에 들고만 있기','벽이나 바닥에 꽂기','Q로 던지기'],1],
+ ['말을 길들이려면?',['당근을 꼭 줘야 한다','빈손으로 여러 번 올라탄다','칼로 친다'],1],
  ['밤에 괴물 시간을 건너뛰려면?',['침대에서 자기','계속 점프','F1 누르기'],0]];
 const qz=document.getElementById('quiz');let score=0,done=0;
 Q.forEach(([q,opts,ans],n)=>{const d=document.createElement('div');d.innerHTML='<h3>'+(n+1)+'. '+q+'</h3>';const fb=document.createElement('div');fb.className='fb';
