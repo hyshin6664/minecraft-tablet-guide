@@ -201,6 +201,39 @@ svg{max-width:100%;height:auto;display:block;margin:8px auto}
 </div>
 </section>
 
+<section data-t="💀 죽었을 때">
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h2>💀 죽으면 어떻게 돼요?</h2>
+<div class="grid">
+<div class="k">🎒 <span>가방 물건·갑옷이 <b>죽은 자리에 전부 떨어져요</b></span></div>
+<div class="k">🟢 <span><b>경험치(초록 구슬)</b>도 대부분 잃어요. 떨어진 건 조금만 주울 수 있어요</span></div>
+<div class="k">🛏️ <span><b>마지막으로 잔 침대</b>에서 다시 태어나요. 침대가 없으면 처음 시작한 곳</span></div>
+<div class="k">🏠 <span>지은 집·상자에 넣어둔 물건은 <b>그대로</b>예요</span></div>
+</div>
+</div>
+
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h2>⏰ 떨어진 물건은 사라져요?</h2>
+<p class="big">네! <b>5분</b> 지나면 사라져요.</p>
+<div class="box yel">⭐ 그런데 비밀: 5분 시계는 <b>내가 가까이 있을 때만</b> 흘러요. 아주 멀리서 다시 태어났다면, 그곳에 <b>다시 가까이 가야</b> 시계가 다시 가요. 그러니 <b>도착하면 바로바로</b> 주워요!</div>
+<div class="box pink">🔥 <b>용암·불</b>에 떨어진 물건은 <b>바로 타서 없어져요.</b><br>🌵 선인장에 닿아도 없어져요.<br>🕳️ 세상 맨 밑(공허)으로 떨어지면 못 찾아요.</div>
+<div class="box sky">🌊 물에 떨어진 물건은 물 위로 둥둥 떠올라요. 물길 따라 흘러갈 수도 있어요.</div>
+</div>
+
+<div class="card"><button class="say" aria-label="읽어주기">🔊</button>
+<h2>🔎 죽은 곳 찾는 꿀팁</h2>
+<ol class="steps">
+<li><b>좌표 켜기</b>: 세계 설정에서 <b>좌표 표시</b>를 켜 두면 화면에 내 위치 숫자가 보여요. 위험한 곳 가기 전에 숫자를 기억하거나 적어 둬요.</li>
+<li><b>동굴에 들어갈 땐 횃불을 오른쪽 벽에만</b> 꽂아요. 다시 갈 때 횃불만 따라가면 돼요.</li>
+<li>모험 떠나기 전에 <b>근처에 침대를 놓고 한 번 자요.</b> 그러면 죽어도 가까운 곳에서 다시 시작해요.</li>
+<li>좋은 물건(다이아몬드 등)은 <b>상자에 넣어 두고</b> 모험 가요. 죽어도 안 잃어버려요!</li>
+<li>떨어진 물건을 주우러 갈 땐 <b>또 죽지 않게</b> 낮에, 무기와 음식을 챙겨 가요.</li>
+</ol>
+<div class="box yel">🧭 <b>회복 나침반</b>: 들고 있으면 <b>마지막으로 죽은 곳</b>을 가리켜요! 나침반 + 메아리 조각 8개로 만들어요. 메아리 조각은 아주 깊은 곳 <b>고대 도시</b>에만 있어서 어려워요.</div>
+<div class="box sky">⚙️ 아예 물건을 안 잃게 하는 <b>인벤토리 유지</b> 설정도 있어요. 세계 설정 → <b>치트</b>에 있어요. 대신 치트를 켜면 <b>도전 과제(업적)를 못 받아요.</b> 엄마·아빠랑 정해요!</div>
+</div>
+</section>
+
 <section data-t="🛡️ 안전 꿀팁">
 <div class="card"><button class="say" aria-label="읽어주기">🔊</button>
 <h2>🛡️ 안전 꿀팁</h2>
@@ -251,6 +284,7 @@ const Q=[
  ['낭떠러지에서 안 떨어지게 걸으려면?',['Ctrl','Shift','Q'],1],
  ['횃불로 동굴을 밝히려면?',['손에 들고만 있기','벽이나 바닥에 꽂기','Q로 던지기'],1],
  ['말을 길들이려면?',['당근을 꼭 줘야 한다','빈손으로 여러 번 올라탄다','칼로 친다'],1],
+ ['죽어서 떨어진 물건은 몇 분 지나면 사라질까?',['1분','5분','안 사라진다'],1],
  ['밤에 괴물 시간을 건너뛰려면?',['침대에서 자기','계속 점프','F1 누르기'],0]];
 const qz=document.getElementById('quiz');let score=0,done=0;
 Q.forEach(([q,opts,ans],n)=>{const d=document.createElement('div');d.innerHTML='<h3>'+(n+1)+'. '+q+'</h3>';const fb=document.createElement('div');fb.className='fb';
